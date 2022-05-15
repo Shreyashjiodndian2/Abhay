@@ -1,0 +1,39 @@
+
+  
+  p {color: black;
+text-align: left;
+  }
+.center{
+
+  background: red;
+  background-size: cover;
+
+}
+.loginform{
+  background: red;
+  width: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  color: #fff;
+}
+.loginform input{
+font-size: 16px;
+width: 100%;
+padding: 15px 10px;
+border: 0;
+outline: none;
+border-radius: 5px;
+}
+.loginform button{
+  font-size: 180px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+
+}
+
+
+
+
