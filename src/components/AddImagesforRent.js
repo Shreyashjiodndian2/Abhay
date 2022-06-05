@@ -3,7 +3,7 @@ import {useSelector , useDispatch, useStore} from "react-redux";
 import { useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 import { Navbar,Nav,NavDropdown,Container,Card,Button,InputGroup,FormControl,Form,Table } from 'react-bootstrap';
-import { update, completedsignal } from "../Service/Operation";
+import { updateforrent } from "../Service/Operation";
 import { storage } from "../firebase.config";
 import {ref, uploadBytes} from  'firebase/storage'
 import { uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -11,17 +11,17 @@ import { uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 
 
-const AddImages = () => {
+const AddImagesforRent = () => {
 
     const dispatch = useDispatch();  
-    const myform = useSelector((state) => state.formreducer)    
-    const cont = useContext(UserContext)
-    console.log("user",cont.user)
+    const myform = useSelector((state) => state.rentreducer)    
+    console.log("myform in rent",myform)
+    const cont = useContext(UserContext) 
 
     var arr = [];
 
     const [ selectedImages, setSelectedImages] = useState([]);
-    const [files, setfiles] = useState([])
+    const [files, setfiles] = useState([]);
     const [urls, seturls] = useState([]);
     const [signal, setsignal] = useState(false)
     const [completesign, setcompletesign] = useState(false)
@@ -112,7 +112,7 @@ const AddImages = () => {
         }
 
         
-        const completedsignal = await update(obj);
+        const completedsignal = await updateforrent(obj);
         setcompletesign(completedsignal)
     }
 
@@ -213,4 +213,4 @@ const AddImages = () => {
     );
 };
 
-export default AddImages;
+export default AddImagesforRent;

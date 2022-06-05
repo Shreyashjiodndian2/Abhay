@@ -2,8 +2,6 @@ import React from "react";
 import { useContext,useEffect, useState, } from "react";
 import {useHistory} from 'react-router-dom'
 import {UserContext} from '../Context/UserContext'
-
-
 import { Link } from 'react-router-dom';
 import { auth } from "../firebase.config";
 import { AuthContext } from "../Context/AuthContext";
@@ -28,7 +26,7 @@ const LoginWithEmail = () => {
         console.log("result login = ",result.user.uid)
         if(result.user.uid !== null)
         {
-            history.push('/')
+            history.goBack();
         }
 
     }
@@ -52,7 +50,7 @@ const LoginWithEmail = () => {
                         <input type="password" onChange={auths}  placeholder="password" required/>
                         <p>Forgot Password?</p>
                         <button type="submit" onClick={onSubmit} className="submitbtn">Login</button>
-                        <p className="centertxt">Don't have Registered yet?<Link to="/Register">register</Link></p>
+                        <p className="centertxt">Don't have Registered yet?<Link to="/Register">Register</Link></p>
                         </form>
 
                 </div>

@@ -10,7 +10,7 @@ const Register = () => {
 
     const [emailid, setemailid] = useState('')
     const [password, setpassword] = useState('')
-    const [obj, setobj] = useState({First : "", Last: '', userid : ''})
+    const [obj, setobj] = useState({First : "", Last: ''})
     const cont = useContext(UserContext);
     const history = useHistory();
 
@@ -25,8 +25,6 @@ const Register = () => {
         // console.log(e.target.value)
         setobj({...obj , [e.target.name]: e.target.value})
         // console.log(obj)
-
-
     }
 
     const onSubmit = async (e)=>{
@@ -36,8 +34,9 @@ const Register = () => {
         {
             var result = await cont.signup(emailid,password)
             // console.log("result = ",result.user.uid)
-            obj.userid = result.user.uid
-            var current  = await UserOperations.add(obj)
+            // obj.userid = result.user.uid
+            var current  = await UserOperations.add(obj,
+                result.user.uid)
             // console.log("cont.user.uid",current.firestore._firestoreClient.user)
             await cont.logout();
             history.push('/Login')

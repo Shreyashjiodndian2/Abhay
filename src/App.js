@@ -6,7 +6,7 @@ import { BrowserRouter as Router,  Switch,  Route} from "react-router-dom";
 import RentProperty from './components/RentProperty';
 import Form1 from './components/Form1';
 import Services from './components/Services';
-
+import AddImagesforRent from './components/AddImagesforRent'
 import AddImages from './components/AddImages';
 import Blog from './components/Blog';
 import Home from './components/Home';
@@ -14,6 +14,7 @@ import AddProperty from './components/AddProperty';
 import Type from './components/Type';
 import LoginWithEmail from './components/LoginWithEmail';
 import Register from './components/Register';
+import Pagesofuser from './components/Pagesofuser';
 import {UserState} from './Context/UserContext'
 import {AuthState} from './Context/AuthContext'
  
@@ -22,7 +23,7 @@ class App extends Component {
     return (
     
 <UserState>
-<AuthState>
+{/* <AuthState> */}
       <Router>
       <Switch>
       
@@ -44,6 +45,12 @@ class App extends Component {
       <Route exact path='/AddImages' >
       < AddImages />
       </Route>
+      <Route exact path='/AddImagesforRent' >
+      < AddImagesforRent />
+      </Route>
+      <Route exact path='/pageofuser' >
+      < Pagesofuser />
+      </Route>
       <Route exact path='/Login'>
       <LoginWithEmail/>
       </Route>
@@ -52,7 +59,7 @@ class App extends Component {
       </Route>
       </Switch>
       </Router>
-      </AuthState>
+      {/* </AuthState> */}
       </UserState>
    );
   }

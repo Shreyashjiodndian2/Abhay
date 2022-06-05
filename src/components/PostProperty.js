@@ -1,10 +1,5 @@
 import react from 'react';
-
-
-
-
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
-
 import { Navbar,Nav,NavDropdown,Container,Card,Button,InputGroup,FormControl,Form,Table } from 'react-bootstrap';
 
 
@@ -45,6 +40,9 @@ const PostProperty =() => {
 				<button className='servicebtn' >
 				<Link to="/Type">Add Property</Link>
 					</button>
+				<button className='servicebtn' >
+				<Link to="/pageofuser">Show hostel property</Link>
+					</button>
 				
 			</div>
 
@@ -72,7 +70,7 @@ const PostProperty =() => {
 		</div>
 		
 
-		);
+	);
 }
 
 
