@@ -26,7 +26,7 @@ const LoginWithEmail = () => {
         console.log("result login = ",result.user.uid)
         if(result.user.uid !== null)
         {
-            history.goBack();
+            history.push('/Home');
         }
 
     }
@@ -34,7 +34,8 @@ const LoginWithEmail = () => {
     
     return( 
         <>
-    <h1 className="loginheading">Login Form</h1> 
+        <div className="authbox1">
+    <h1 className="loginheading">Login </h1> 
     <div className="alignment">
         <div className="leftdiv">
         <img src="https://image.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg"/>
@@ -43,17 +44,22 @@ const LoginWithEmail = () => {
                 <div className="cont">
                     <div className="loginform logincss">
          
-                        <form>
-                        <p>Email-id</p>
-                        <input type="text" onChange={auths} name="email" placeholder="email" required/>
-                        <p>Password</p>
-                        <input type="password" onChange={auths}  placeholder="password" required/>
-                        <p>Forgot Password?</p>
-                        <button type="submit" onClick={onSubmit} className="submitbtn">Login</button>
-                        <p className="centertxt">Don't have Registered yet?<Link to="/Register">Register</Link></p>
+                        <form className="formcss">
+                      
+                        <br/><br/>
+                        <input type="text" onChange={auths} name="email" placeholder="Email" required/>
+                  <br/><br/><br/>
+                        <input type="password" onChange={auths}  placeholder="Password" required/>
+                        <p  id="smalltxt">Forgot Password?</p>
+                        
+                        <div className="centeralglogin">
+                        <button type="submit" onClick={onSubmit} className=" logbtn">Login</button>
+                        </div>
+                        <p id="smalltxt">Don't have Registered yet?<Link to="/Register">Register</Link></p>
                         </form>
 
                 </div>
+            </div>
             </div>
     </div>
     </div>

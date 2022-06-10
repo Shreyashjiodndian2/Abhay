@@ -14,9 +14,9 @@ const Service =() => {
 	return (
 
         <div className='service'>
-            <h1 className='h1class'>OUR SERVICES</h1>
+            <h1 className='h1class h1bg'>OUR SERVICES</h1>
             <div className='subservice'>
-                <div className='servicediv' data-aos="slide-right">
+                <div className='servicediv servicedivision' data-aos="slide-right">
                     <div className='borderbreakimg'>
                 <img src='./images/example-img.png'/>
                 </div>
@@ -27,7 +27,7 @@ const Service =() => {
                 </p>    
                 </div>
 
-                <div className='servicediv' data-aos="slide-down">
+                <div className='servicediv servicedivision' data-aos="slide-down">
                     
                 <div className='borderbreakimg'>
                 <img src='./images/example-img.png'/>
@@ -39,7 +39,7 @@ const Service =() => {
                 </p>    
                 </div>
 
-                <div className='servicediv' data-aos="slide-left">
+                <div className='servicediv servicedivision' data-aos="slide-left">
                     
                 <div className='borderbreakimg'>
                 <img src='./images/example-img.png'/>
@@ -55,10 +55,10 @@ const Service =() => {
 
 
         <div>
-            <h1 className='h1class'>WE PROVIDE SERVICE FOR</h1>
+            <h1 id='servhed' className='h1class'>WE PROVIDE SERVICE FOR</h1>
             <div className='addproperty' data-aos="slide-left">
                 <div className='servicecontent'>
-                    <h2>PROPERTY OWNERS</h2>
+                    <h2 className='servhead'>PROPERTY OWNERS</h2>
                     <p>can add property and manage their properties with a number of facilities </p>
                     <button className='servicebtn'><Link to="/AddProperty" className='textdec'>Add-property</Link></button>
                 </div>
@@ -67,7 +67,6 @@ const Service =() => {
                 </div>
 
             </div>
-            
 
        
             <div className='searchproperty' data-aos="slide-right">

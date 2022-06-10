@@ -7,6 +7,9 @@ import { Link,Switch,Router,Route } from 'react-router-dom';
 import Type from './Type';
 import AddImages from './AddImages';
 import '../css/main2.css'
+import FeaturedProject from './FeaturedProject';
+
+import RentProperty from './RentProperty';
 
 import '../css/main.css'
 
@@ -19,7 +22,7 @@ const AddProperty =() => {
         <PostProperty/>
         <Dashboard/>
           <Type/>
-       
+          <FeaturedProject/>
         
         
         </div>

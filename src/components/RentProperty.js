@@ -93,6 +93,7 @@ const RentProperty =(props) => {
                     <option value="Apartment">Apartment</option>
                     <option value="Independent Floor">Independent Floor</option>
                     <option value="Villa">Villa</option>
+                    <option value="Villa">Flat</option>
                 </select>
                 
                 <select name='BHK' onChange={propertydetails} id='bhk'>
@@ -104,10 +105,16 @@ const RentProperty =(props) => {
                     <option value="3+BHK">3+BHK</option>
                 </select>
                 
+                <select name='Furnished Type' onChange={propertydetails} id='furnishedType'>
+                               <option value="">---Select Furnished Type---</option>
+                               <option value="Semi furnished">Semi furnished</option>
+                               <option value="Fully furnished">Fully furnished</option>
+                               <option value="Unfurnished">Unfurnished</option>
+                            </select>
 
-                <input className='inputcss fulllength' name='BuiltupArea' onChange={propertydetails} type='text ' placeholder="Built up Area *" required/>
-                <br/>
-
+                <input className='inputcss fulllength' id='inputid' name='BuiltupArea' onChange={propertydetails} type='text ' placeholder="Built up Area *" required/>
+                <br/><br/>
+            <div style={{padding:"0 200px"}}>
                 <div className='radiobuttongroup'>
                   <p>Bathroom</p>
                     <div class="wrapper">
@@ -134,7 +141,7 @@ const RentProperty =(props) => {
                     </div>
                 </div>
 
-                
+                <br/><br/><br/>
                 
                 
                 <div className='radiobuttongroup'>
@@ -164,18 +171,12 @@ const RentProperty =(props) => {
                     </div>
                 </div>
                        
-               
+                <br/><br/><br/>
             
             
                 
                 
                     
-                           <select name='Furnished Type' onChange={propertydetails} id='furnishedType'>
-                               <option value="">---Select Furnished Type---</option>
-                               <option value="Semi furnished">Semi furnished</option>
-                               <option value="Fully furnished">Fully furnished</option>
-                               <option value="Unfurnished">Unfurnished</option>
-                            </select>
 
                             <div className='radiobuttongroup'>
                     <p>Parking</p>
@@ -193,18 +194,19 @@ const RentProperty =(props) => {
                       </div>
                   </div>
                 </div>  
+                </div>
 
-
+                <br/>
 {/*---------------------------------------------otherdetails---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
 
             
             <h4>Other Details</h4>
             <div className='PropertyInfo'>
             
-            <input className='inputcss fulllength' onChange={otherdetail} name='Available from' type='text' placeholder="Available from *" required/>
-            <input className='inputcss fulllength' onChange={otherdetail} name='Monthly Rent' type='text' placeholder="Monthly Rent *" required/>
-            <input className='inputcss fulllength' onChange={otherdetail} name='Maintanence Charge' type='text' placeholder="Maintanence Charge"/>
-            <input className='inputcss fulllength' onChange={otherdetail} name='Security Deposit' type='text' placeholder="Security Deposit"/>
+            <input className='inputcss fulllength' id='inputid' onChange={otherdetail} name='Available from' type='text' placeholder="Available from *" required/>
+            <input className='inputcss fulllength' id='inputid' onChange={otherdetail} name='Monthly Rent' type='text' placeholder="Monthly Rent *" required/>
+            <input className='inputcss fulllength' id='inputid' onChange={otherdetail} name='Maintanence Charge' type='text' placeholder="Maintanence Charge"/>
+            <input className='inputcss fulllength' id='inputid' onChange={otherdetail} name='Security Deposit' type='text' placeholder="Security Deposit"/>
             
             
             
@@ -226,12 +228,12 @@ const RentProperty =(props) => {
             <h4>Address Details</h4>
             <div className='PropertyInfo'>
 
-            <input className='inputcss fulllength' onChange={addressdetails} name='City' type='text' placeholder="City *" required/>
-            <input className='inputcss fulllength'name='Building/Society' onChange={addressdetails} type='text' placeholder="Building/ Society *" required/>
-            <input className='inputcss fulllength' type='text' name='Locality' onChange={addressdetails} placeholder="Locality *" required/>
+            <input className='inputcss fulllength' id='inputid' onChange={addressdetails} name='City' type='text' placeholder="City *" required/>
+            <input className='inputcss fulllength' id='inputid' name='Building/Society' onChange={addressdetails} type='text' placeholder="Building/ Society *" required/>
+            <input className='inputcss fulllength' id='inputid' type='text' name='Locality' onChange={addressdetails} placeholder="Locality *" required/>
              
             <div className='box1'>
-            <input className='inputstyle2' placeholder='Flat No' type='text' onChange={addressdetails} name='Flat No'/>
+            <input className='inputstyle2'  placeholder='Flat No' type='text' onChange={addressdetails} name='Flat No'/>
             <input className='inputstyle2' placeholder='Floor No' type='text' onChange={addressdetails} name='Floor No'/>
             <input className='inputstyle2' placeholder='Total Floor' type='text' onChange={addressdetails} name='Total Floor'/>
             </div>

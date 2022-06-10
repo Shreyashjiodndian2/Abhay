@@ -55,7 +55,8 @@ const Register = () => {
     
     return( 
         <>
-          <h1 className="loginheading">Register Here</h1> 
+        <div className="authbox2">
+          <h1 className="loginheading">Register </h1> 
     <div className="alignment">
         <div className="leftdiv">
         <img src="https://martechmasons.com/wp-content/uploads/2020/06/Group-9349-400x469.png"/>
@@ -64,26 +65,44 @@ const Register = () => {
                 <div className="cont">
                     <div className="loginform registercss">
                   
-                        <form>
-                        <p>Email</p>
-                        <input type="text" name="email" onChange={userauth} placeholder="Email" required/>
-                        <p>First name</p>
-                        <input type="text" name="First" onChange={userextra} placeholder="Firstname" required/>
-                        <p>Last name</p>
-                        <input type="text" name="Last" onChange={userextra} placeholder="Lastname" required/>
-                        <p>Password</p>
-                        <input type="password" name="password" onChange={userauth} placeholder="password" required/>
+                        <form className="formcss">
+                        
+                       
+                        <br/><br/>
+                        <input id="exception" type="text" name="email" onChange={userauth} placeholder="Email" required/>
+                       <br/><br/>
+                       <div className="names">
+                           <div>
+                        <input type="text" name="firstname" onChange={userextra} placeholder="Firstname" required/>
+                        </div>
+                        <div>                 
+             <input type="text" name="firstname" onChange={userextra} placeholder="Lastname" required/>
+                        </div>
+                        </div>
                         <br/>
+                        <input id="exception" type="text" name="phoneno" onChange={userextra} placeholder="phone-no" required/>
+                        <br/><br/>
+                        <input id="exception" type="text" name="alternatephoneno" onChange={userextra} placeholder="Alternate phone-no" required/>
+                       
+                        <br/><br/>
+                         <input id="exception" type="password" name="password" onChange={userauth} placeholder="password" required/>
                         <br/>
-                        <button type="submit" onClick={onSubmit} className="submitbtn">Register</button>
-                        <p className="centertxt">Already have an account?<Link to="/Login">Login</Link></p>
+                       
+                       
+                        <br/>
+                        <div className="centeralgreg">
+                        <button type="submit" onClick={onSubmit} className="servicebtn">Register</button>
+                        </div>
+                        <p id="smalltxt" className="centertxt">Already have an account?<Link to="/Login">Login</Link></p>
                         </form>
 
                 </div>
             </div>
     </div>
     </div>
+    </div>
     </>
+
 
        );
 

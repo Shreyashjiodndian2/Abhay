@@ -7,33 +7,40 @@ const Footer =() => {
 
 
 
-        <div className='contactusText'>
-        <h3 text-color='#001a68' className='h1class'>Let's Get in Touch</h3>
-        <h1 text-color='#001a68' className='h1class'>Contact us</h1>
-        </div>
-        <p className='contactpara'>can add property and manage their properties with a number of facilitiescan add property and manage their properties with a number of facilitiescan add</p>
+        
         <div className='outercontact'>
             <div className='innercontact1'>
-                <div className='alignment'>
+                <img src='https://woobro.design/thumbnails/38/website-support-vector-illustration-5de193d48a370.png'/>
+                <div className='aligned'>
+                 <div class="footer-icons">
+                        <a href="https://www.facebook.com/robo.folks"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <div className='start'>
+                        <h3>Email us at liveintemporaryrental@gmail.com</h3>  
+                    </div>
+               
+                    </div>
+                    <div className='aligned'>
                 <div class="footer-icons">
                         <a href="https://www.facebook.com/robo.folks"><i class="fa fa-facebook"></i></a>
                     </div>
                     <div className='start'>
-                        <h3>visit us</h3>  
-                        <p>rental solutions</p>  
-                    </div>
-                </div>
-                <div className='alignment'>
-                <div class="footer-icons">
-                        <a href="https://www.facebook.com/robo.folks"><i class="fa fa-facebook"></i></a>
-                    </div>
-                    <div className='start'>
-                        <h3>visit us</h3>  
-                        <p>rental solutions</p>  
+                        <h3>Contact us
+                        +912345567875</h3>    
                     </div>
                 </div>
             </div>
             <div className='innercontact2'>
+
+
+            <div className='contactushead'>
+        <h3 text-color='#001a68' className='contactushead'>Let's Get in Touch</h3>
+        <h3 text-color='#001a68' className='contactushead hh3'>Contact us</h3>
+        
+        <h3 className='contactushead'>can add property and manage and allocate </h3>
+        <br/>
+        </div>
+        <br/>
             
             <div className='test'>
             <input className='inputcss' placeholder='Name' type='text' name='email'/>
@@ -44,8 +51,9 @@ const Footer =() => {
             <input className='inputcss' placeholder='Phone number' type='text' name='email'/>
             </div>
             <input className='inputcss css' placeholder='write your query..' type='text' name='email'/>
-            <button className='servicebtn widthh'>Send</button>
-
+            <div className='centeralg'>
+            <button className='servicebtn'>Send</button>
+            </div>
 
 
 

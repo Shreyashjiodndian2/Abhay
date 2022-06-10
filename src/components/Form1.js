@@ -28,10 +28,12 @@ export default function Form1()
   }, [])
 
   setTimeout(() => {
+    {/** 
     if(cont.user == null)
     {
       history.push('/login')
     }
+    */}
   }, 4000);
   
 
@@ -122,7 +124,7 @@ export default function Form1()
 
   }
 
-  // Other PG details
+  // Other Hostel details
   const [otherpgdetails, setotherpgdetails] = useState({})
   
   const otherpgdetailsinput = (e)=>{
@@ -211,17 +213,23 @@ export default function Form1()
             <div className='backgroundimg'>
               <form>
               <div className='maindiv'>
+                
+            <div className='innerdivision'>
 
               <div>
                 <h5 className='red'>*indicates a mandatory field</h5>
-                <h4>PG/Hostel Details</h4>
+                <h4>Hostel Details</h4>
               <div className='HostelInfo'>
-                <input className='inputcss fulllength' name='hostelname' onChange={hostelinput} type='text ' placeholder="Hostel/PG Name" required/>
+              <div className='space-around'>
+                <input className='inputcss fulllength' id='inputid' name='hostelname' onChange={hostelinput} type='text ' placeholder="Hostel Name" required/>
                 <br/>
-                <input className='inputcss fulllength' name='totalbeds' onChange={hostelinput} type='text ' placeholder="Total No. of Beds required"/>
-                <br/>
+                <input className='inputcss fulllength'id='inputid' name='totalbeds' onChange={hostelinput} type='text ' placeholder="Total No. of Beds required"/>
+                <br/><br/>
+                </div>
+                
+              <div className='space-around'>
                 <div className='radiobuttongroup'>
-                  <p>PG is for</p>
+                  <p id='pid'>Hostel is for</p>
                     <div class="wrapper">
                           <input type="radio" onChange={hostelinput} name="pgfor" value='girls' id="option-1" />
                           <input type="radio" onChange={hostelinput} name="pgfor" value='boys' id="option-2"/>
@@ -234,20 +242,45 @@ export default function Form1()
                                 <span>boys</span>
                             </label>
                     </div>
-                </div>       
-                  <select name="suitedfor" id="lang" onChange={hostelinput}>
-                    <option value="javascript">Best suited for</option>
-                    <option value="php">PHP</option>
-                    <option value="java">Java</option>
-                    <option value="golang">Golang</option>
-                    <option value="python">Python</option>
-                    <option value="c#">C#</option>
-                    <option value="C++">C++</option>
-                    <option value="erlang">Erlang</option>
-                  </select>
+                </div>
 
+
+
+                <div className='radiobuttongroup'>
+                  <p id='pid'>Unmarried Couples Allowed?</p>
+                    <div class="wrapper">
+                          <input type="radio" onChange={hostelinput} name="pgfor" value='girls' id="option-8" />
+                          <input type="radio" onChange={hostelinput} name="pgfor" value='boys' id="option-9"/>
+                            <label for="option-8" class="option option-8">
+                             
+                                <span>Yes</span>
+                                </label>
+                            <label for="option-9" class="option option-9">
+                              
+                                <span>No</span>
+                            </label>
+                    </div>
+                </div>
+
+                 </div>     
+                <br/> 
+                <div className='dropdown'  style={{paddingLeft:"-3000px",width: "800px"}}>
+  <select>
+    <option value="0">Best Suited For</option>
+    <option value="1">Audi</option>
+    <option value="2">BMW</option>
+    <option value="3">Citroen</option>
+    <option value="4">Ford</option>
+  </select>
+</div>
+                 
+
+
+
+                  
+              <div className='space-around'>
                   <div className='radiobuttongroup'>
-                    <p>Meals available</p>
+                    <p id='pid'>Meals available</p>
                       <div class="wrapper">
                             <input type="radio" name="mealsavailable" value='yes' onChange={hostelinput} id="option-3" />
                             <input type="radio" name="mealsavailable" value='no' onChange={hostelinput} id="option-4"/>
@@ -258,14 +291,20 @@ export default function Form1()
                                   <span>no</span>
                               </label>
                       </div>
-                  </div>  
+                  </div>   
+                   <input id='inputid' className='inputcss fulllength' name='mealchargepermonth' onChange={otherpgdetailsinput} type='text ' placeholder="Meal charge per month" required/>
+                  
+                   </div>
 
 
 
-                  <input className='inputcss' type='text' name='noticeperiod' onChange={hostelinput} placeholder="Notice period" required/>
-                  <input className='inputcss' type='text' name='lockinperiod' onChange={hostelinput} placeholder="Lockin period" required/>   
-                  <p className='commonarea'>Common area</p>  
-                  <div className='inputgrp'>
+                  <input className='inputcss' id='inputid' type='text' name='noticeperiod' onChange={hostelinput} placeholder="Notice period" required/>
+                  <input className='inputcss' id='inputid' type='text' name='lockinperiod' onChange={hostelinput} placeholder="Lockin period" required/>
+                
+                
+              <div className='space-around'>
+                  <p id='pid' className='commonarea'>Common area</p>  
+                  <div className='inputgrp inputgrpcls'>
                       <div class="checkbox-example">
                         <input type="checkbox" onClick={commonareainputs} value="living" id="checkboxOneInput1"/>
                         <label for="checkboxOneInput1">Living</label>
@@ -278,7 +317,7 @@ export default function Form1()
                       </div> 
                       <div class="checkbox-example">
                         <input type="checkbox" onClick={commonareainputs} value="dininghall" id="checkboxOneInput3"/>
-                        <label for="checkboxOneInput3">Dining-Hall</label>
+                        <label for="checkboxOneInput3">DiningHall</label>
                       </div>
                       <div class="checkbox-example">
                         <input type="checkbox" onClick={commonareainputs} value="library" id="checkboxOneInput4"/>
@@ -286,25 +325,20 @@ export default function Form1()
                       </div>
                   </div>    
               </div>
-
+              </div>
 
 
 {/* ///////////////////////////////////////////// Owners details //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/}
 
-              <h4>Owner/Caretaker Details</h4>
+<h4>Owner/Caretaker Details</h4>
               <div className='HostelInfo'>
-                  <select name="propertymanagedby" id="lang" onChange={ownerdetailsinput}>
-                        <option value="javascript">Property Managed by</option>
-                        <option value="php">PHP</option>
-                        <option value="java">Java</option>
-                        <option value="golang">Golang</option>
-                        <option value="python">Python</option>
-                        <option value="c#">C#</option>
-                        <option value="C++">C++</option>
-                        <option value="erlang">Erlang</option>
-                      </select>
+
+
+              <div className='space-around'>
+              
                       <br/>
-                      <p className='propertymanager'>Property manager stays at premise?</p>
+                      <p id='pid' className='propertymanager'>Property manager stays at premise?</p>
+                      <br/> 
                       <div class="wrapper right">
                           <input type="radio" onChange={ownerdetailsinput} name="staysatpremise" value='yes' id="option-5" />
                           <input type="radio" onChange={ownerdetailsinput}  name="staysatpremise" value='no' id="option-6"/>
@@ -317,12 +351,36 @@ export default function Form1()
                                 <span>no</span>
                             </label>
                     </div>
-                  <input className='inputcss fulllength' onChange={ownerdetailsinput}  type='text ' name='ownername' placeholder="Caretaker name" required/>
+</div>
+                   
+                   
+
+                    <div  style={{width: "800px"}}>
+  <select>
+    <option value="0">Property Manged By</option>
+    <option value="1">Audi</option>
+    <option value="2">BMW</option>
+    <option value="3">Citroen</option>
+    <option value="4">Ford</option>
+  </select>
+</div>
+                    
+              <div className='space-around'>
+                  <input className='inputcss fulllength' id='inputid' onChange={ownerdetailsinput}  type='text ' name='ownername' placeholder="Caretaker name" required/>
                   <br/>
-                  <input className='inputcss fulllength' onChange={ownerdetailsinput}  type='text ' name='ownerphone' placeholder="Caretaker phone no. " required/>
+                  <input className='inputcss fulllength' id='inputid' onChange={ownerdetailsinput}  type='text ' name='ownerphone' placeholder="Caretaker phone no. " required/>
                   <br/>
-                          
+                  </div>
+                  <input id='inputid' className='inputcss fulllength' name='addadditionalinfo' onChange={otherpgdetailsinput} type='text ' placeholder="Add additional info" required/>
+              
                 </div>
+ 
+                          
+
+                
+
+
+
  
                           
 
@@ -338,8 +396,10 @@ export default function Form1()
 
           // <RoomdetailsForm i={i} idris = {idris} />
       <div className='HostelInfo'>
+        
+        <div className='space-around'>
                  <div className='button-groups'>
-                  <p className='commonarea'>Room Type {i+1}</p>
+                  <p id='pid' className='commonarea'>Room Type{i+1}</p>
                   {i > 0 ? <img className='delet'  onClick={() => handleRemoveClick(i)} src={'images/dustbin.png'} alt="group"/> : ''}
                   </div>
 
@@ -425,7 +485,7 @@ export default function Form1()
 
                  
                       <br/>
-                <div className='inputgrp'>
+                <div className='inputgrp inputgrproom'>
                       <div class="checkbox-example">
                         <input type="checkbox" name="singlesharing" value={x.singlesharing}
               onChange={e => handleInputChange2(e, i)} checked={x.singlesharing} id={idris+10}/>
@@ -451,15 +511,19 @@ export default function Form1()
                       
                     </div> 
                        
+                       </div>
+
+
+              <div className='space-around'>
                        <input 
-              onChange={e => handleInputChange(e, i)} value={x.rent} className='inputcss' type='text' name="rent"  placeholder="Rent"/>
+              onChange={e => handleInputChange(e, i)} id='inputid' value={x.rent} className='inputcss' type='text' name="rent"  placeholder="Rent"/>
                         <input  
-              onChange={e => handleInputChange(e, i)}  className='inputcss' value={x.securitydeposit}  type='text' name="securitydeposit"    placeholder="Security Deposit"/>  
-                  
-                          <input className='inputcss' onChange={e => handleInputChange(e, i)} type='text' name='securitydeposit2' value={x.securitydeposit2}  placeholder="Security Deposit"/>  
+              onChange={e => handleInputChange(e, i)} id='inputid' className='inputcss' value={x.securitydeposit}  type='text' name="securitydeposit"    placeholder="Security Deposit"/>  
+                  </div>
+                          <input className='inputcss shiftrgt' id='inputid' onChange={e => handleInputChange(e, i)} type='text' name='securitydeposit2' value={x.securitydeposit2}  placeholder="Total no. of rooms of this type"/>  
                         <br/>   
                     
-                        <p className='commonarea'>Facilities Offered</p>
+                        <p id='pid' className='commonarea'>Facilities Offered</p>
                     <div className='inputgrp'>
                       <div class="checkbox-example">
                         <input type="checkbox" onChange={e => handleInputChange2(e, i)} checked={x.personalcupboard}  name="personalcupboard" id={idris + 50}/>
@@ -667,31 +731,17 @@ export default function Form1()
             </div>
 
 
-{/* ///////////////////////////////////////////// Other PG detials //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/} 
-            <div className='otherpgdetails'>
-  
-              <p className='iconheading'>Other PG Details</p>
-              <div className='HostelInfo'>
-                <input className='inputcss fulllength' name='onetimemoveincharge' onChange={otherpgdetailsinput} type='text ' placeholder="One time move in charge" required/>
-                <br/>
-                <input className='inputcss fulllength' name='mealchargepermonth' onChange={otherpgdetailsinput} type='text ' placeholder="Meal charge per month" required/>
-                <br/>
-                <input className='inputcss fulllength' name='electricitychargepermonth' onChange={otherpgdetailsinput} type='text ' placeholder="electricity charge per month" required/>
-                <br/>
-                <input className='inputcss fulllength' name='addadditionalinfo' onChange={otherpgdetailsinput} type='text ' placeholder="Add additional info" required/>
-                <br/>
-                </div>
-
-            </div>
-
+{/* ///////////////////////////////////////////// Other Hostel detials //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/} 
+          
 {/* ///////////////////////////////////////////// Address Details //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/} 
 
             <h4>Address Details</h4>
             <div className='HostelInfo'>
 
-            <input className='inputcss fulllength' onChange={addressdetailsinput} name='city' type='text' placeholder="City *" required/>
-            <input className='inputcss fulllength' onChange={addressdetailsinput} name='building' type='text' placeholder="Building/ Society *" required/>
-            <input className='inputcss fulllength' onChange={addressdetailsinput} name='locality' type='text' placeholder="Locality *" required/>
+            <input id='inputid' className='inputcss fulllength' onChange={addressdetailsinput} name='city' type='text' placeholder="City *" required/>
+            <input id='inputid' className='inputcss fulllength' onChange={addressdetailsinput} name='building' type='text' placeholder="Building/ Society *" required/>
+            <input id='inputid' className='inputcss fulllength' onChange={addressdetailsinput} name='locality' type='text' placeholder="Locality *" required/>
+            <input id='inputid' className='inputcss fulllength' onChange={addressdetailsinput} name='state' type='text' placeholder="State *" required/>
              
             </div>
           
@@ -699,6 +749,7 @@ export default function Form1()
             <div className='continuebtn'>
             <button type='submit' onClick={submitted} className='continue'>
 				      {/* <Link to="/Addimages">Continue</Link>*/} submit</button> 
+            </div>
             </div>
             </div>
             </form>

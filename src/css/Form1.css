@@ -1,3 +1,18 @@
+
+
+
+
+
+/*parking type 2wheeeler 4wheelr dropdown with condition of selected parking element*/
+
+/*electric charges to add in rent form*/
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+
+
+
 .usericon{
   width: 50px;
   height: 50px;
@@ -5,14 +20,17 @@
   margin-top: 10px;
   border-radius: 50%;
 }
+.hiddentext{
+  display: none;
+}
 h1,h2,h3,h4,h5,h6,input,p,select{
     font-size: 18px;
   }
   label{
     font-size: 15px;
   }
-  p{
-    font-weight: bold;
+  .innerdivision{
+    margin: 0 70px;
   }
   .backgroundimg{
     background-repeat: no-repeat;
@@ -21,8 +39,9 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   }
   .maindiv{
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
-    width: 50%;
-    background: #fff;
+    width:80%;
+    
+    background: var(--white);;
     margin:auto;
   }
   .button-groups{
@@ -31,7 +50,7 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     flex-direction: row;
   }
   .button-groups div{
-    background:#001A68;
+    background:#1685F8;
     padding: 3%;
     text-transform: uppercase;
     color: #fff;
@@ -40,14 +59,14 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   
   .HostelInfo{
     background: #EBEBEB;
-    padding: 2%;
+    padding: 10px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     margin: 3%;
   }
   
   .backgroundimg {
     
-    background: url('../images/BACKGROUNG.png');
+    background:
   
   }
   .backgroundimg h5{
@@ -65,25 +84,23 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     width: 30%;
     border: none;
     background: #EBEBEB;
-    border-bottom: 1px solid black;
   }
   input::placeholder{
-    color: black;
-    font-weight: bold;
+    color: grey;
+
   }
-  input[type="radio"]{
-    visibility:hidden;
-  }
+  input[type="radio"]:checked + label {
+    background:#1685F8;
+    color: #EBEBEB;
+}
   .radiobuttongroup{
     display: flex;
+    margin-bottom: -60px;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
   }
   .radiobuttongroup p{
-  margin-left: 5%;
-  font-weight: bold;
-  color: black;
   }
   .wrapper{
     display: inline-flex;
@@ -93,9 +110,9 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     justify-content: space-evenly;
     border-radius: 5px;
     padding: 20px 15px;
+    margin-top: -10px;
   }
   .wrapper .option{
-    background: none;
     height: 100%;
     width: 100%;
     display: flex;
@@ -105,9 +122,14 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     background: #fff;
     border-radius: 5px;
     cursor: pointer;
-    padding: 0 0px;
+    padding: 10 10px;
     transition: all 0.3s ease;
   }
+.option span{
+  background: #fff;
+  padding: 6px 15px;
+  border-radius: 5px;
+}
   .wrapper .option .dot{
     height: 20px;
     width: 20px;
@@ -120,7 +142,7 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     left: 4px;
     width: 12px;
     height: 12px;
-    background: #001A68;
+    background: #1685F8;
     border-radius: 50%;
     opacity: 0;
     transform: scale(1.5);
@@ -131,8 +153,8 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   }
   #option-1:checked:checked ~ .option-1,
   #option-2:checked:checked ~ .option-2{
-    border-color: #001A68;
-    background: #001A68;
+    
+    background: #1685F8;
   }
   #option-1:checked:checked ~ .option-1 .dot,
   #option-2:checked:checked ~ .option-2 .dot{
@@ -149,20 +171,42 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   }
   #option-1:checked:checked ~ .option-1 span,
   #option-2:checked:checked ~ .option-2 span{
-    color: #fff;
+    color:#fff;
+    background:  #1685F8;
+    
   }
-  
   
   
   
   #option-3:checked:checked ~ .option-3,
   #option-4:checked:checked ~ .option-4{
-    border-color: #001A68;
-    background: #001A68;
+    border-color: #1685F8;
+    color:#fff;
+    background:  #1685F8;
+    
+  }
+  #ption-4:checked:checked ~ .option-4 .dot{
+    color:#fff;
+    background:  #1685F8;
+  }
+  #option-3:checked:checked ~ .option-3 .dot::before,
+  #option-4:checked:checked ~ .option-4 .dot::before{
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  
+  #option-3:checked:checked ~ .option-3,
+  #option-4:checked:checked ~ .option-4{
+    border-color: #1685F8;
+    color:#fff;
+    background:  #1685F8;
+    
   }
   #option-3:checked:checked ~ .option-3 .dot,
   #option-4:checked:checked ~ .option-4 .dot{
-    background: #fff;
+    color:#fff;
+    background:  #1685F8;
   }
   #option-3:checked:checked ~ .option-3 .dot::before,
   #option-4:checked:checked ~ .option-4 .dot::before{
@@ -175,16 +219,18 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   }
   #option-3:checked:checked ~ .option-3 span,
   #option-4:checked:checked ~ .option-4 span{
-    color: #fff;
-  }
+    color:#fff;
+    background:  #1685F8;
+  }option-3:checked:checked ~ .option-3 .dot,
+  #o
   
   
   
   
   #option-5:checked:checked ~ .option-5,
   #option-6:checked:checked ~ .option-6{
-    border-color: #001A68;
-    background: #001A68;
+    border-color: #1685F8;
+    background: #1685F8;
   }
   #option-5:checked:checked ~ .option-5 .dot,
   #option-6:checked:checked ~ .option-6 .dot{
@@ -201,8 +247,37 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   }
   #option-5:checked:checked ~ .option-5 span,
   #option-6:checked:checked ~ .option-6 span{
-    color: #fff;
+    color:#fff;
+    background:  #1685F8;
   }
+
+
+
+  #option-8:checked:checked ~ .option-8,
+  #option-9:checked:checked ~ .option-9{
+    border-color: #1685F8;
+    background: #1685F8;
+  }
+  #option-8:checked:checked ~ .option-8 .dot,
+  #option-9:checked:checked ~ .option-9 .dot{
+    background: #fff;
+  }
+  #option-8:checked:checked ~ .option-8 .dot::before,
+  #option-9:checked:checked ~ .option-9 .dot::before{
+    opacity: 1;
+    transform: scale(1);
+  }
+  .wrapper .option span{
+    font-size: 20px;
+    color: black;
+  }
+  #option-8:checked:checked ~ .option-8 span,
+  #option-9:checked:checked ~ .option-9 span{
+    color:#fff;
+    background:  #1688F8;
+  }
+
+  
   .right{
     float: right;
   }
@@ -221,7 +296,7 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   .continue{
     padding: 10px;
     border-radius: 5px;
-    background: #70A66D;
+    background: #1685F8;
     color: #fff;
   }
   .checkk{
@@ -240,22 +315,24 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   /* the slider bar */
   .checkbox-example {
     border-radius: 5px;
-    margin: 50px 0;
-    width: 200px;
+    margin: 0px 50;
+    
+    font-size: 50px;
   }
   
   /* the slider from the label */
   .checkbox-example label {
     transition: all .5s ease;
     cursor: pointer;
+    font-size: 18px;
     background: #fff;
-    padding: 10px 8px;
+    padding: 10px 19px;
     border-radius: 5px;
   }
   
   /* Move the slider if the checkbox is clicked */
   .checkbox-example input[type=checkbox]:checked+label {
-    background: #70A66D;
+    background: #1685F8;
     color: #fff;
   }
   .inputgrp{
@@ -263,16 +340,33 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     justify-content: space-between;
     flex-direction: row;
     margin-left: 3%;
+    border: none;
+    padding: 0 50px;
   }
   .inputgrp .label{
     border-radius: 50%;
     height: 80px;
     width: 80px;
     display: flex;
+    
     justify-content: center;
     align-items: center;
   }
+.inputgrpcls{
+margin-top: -100px;
+}
+.inputgrproom{
   
+margin-top: -100px;
+}
+.inputgrpcls label{
+  margin-left: 60px;
+  }
+  #inputid{
+    border: none;
+    border-bottom: 1px solid black;
+    width: 400px;
+  }
   .inputgrp label img{
   width: 60px;
   height: 60px;
@@ -285,11 +379,12 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     margin-left: 4%;
   }
   .addnew{
-    background: #001A68;
+    border: none;
+    background: #1685F8;
     color: #fff;
     font-weight: bold;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px 30px;
     text-align: center;
     margin: auto;
   }
@@ -297,9 +392,13 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   color: red;
   font-weight: normal;
   }
+  p{
+    font-size: 15px;
+  }
   .commonarea{
     font-weight: bold;
     margin: 2% 4%;
+    font-size: 19px;
     margin-bottom: -20px;
     color: black;
   }
@@ -315,4 +414,125 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   .fulllength{
     width: 80%;
   }
+  ::placeholder { 
+    color: grey;
+    font-size: 16px;
+    padding-left: 3px;
+  }
+
+  .bestsuited{
+    height: 50px;
+    width: 200px;
+  }
+  .space-around{
+    display: flex;
+  }
+
+
   
+  .formcss input{
+    border: 1px solid black;
+    padding: 8px 10px;
+    margin-top: -90px;
+  }
+  #exception{
+    
+    width: 300px;
+  }
+
+  .space-around{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    margin-bottom: 80px;
+  }
+  
+  .space-around {
+
+    margin-right:20px;
+  }
+
+
+  .formcss input::placeholder{
+ 
+    color: gray;
+}
+
+.authbox1 img{
+  width: 500px;
+}
+.authbox1{
+  margin: 50px 300px;
+  padding: 20px 40px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+}
+
+
+.authbox2 img{
+  width: 300px;
+}
+.authbox2{
+  margin: 50px 300px;
+  padding: 20px 400px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+}
+
+.names{
+  display: flex;
+}
+.names input{
+  width: 148px;
+  margin-right: 5px;
+}
+
+
+.centeralglogin{display: flex;
+  align-items: center;
+  text-align: center;
+}
+#smalltxt{
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.logbtn{
+ width: 230px;
+ padding: 10px 0;
+ 
+ background: #1685F8;
+ color: #fff;
+ border: none;
+ font-size: 20px;
+ font-weight: 700;
+  text-align: center;
+}
+
+
+.centeralgreg{display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px ;
+}
+
+
+.shiftrgt{
+  transform: translateX(30px);
+}
+
+
+
+
+
+
+/*fonts*/
+
+#pid{
+  white-space: nowrap ;
+font-weight: normal;
+font-size: 18px;
+text-align: center;
+display: inline;  
+}
+

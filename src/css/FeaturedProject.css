@@ -1,0 +1,58 @@
+
+.slider{
+
+    display: flex;
+    flex-direction: row;
+}
+
+.outerbox{
+    padding: 10px;
+    margin: 0px;
+}
+
+.inbox{
+    border: 2px solid black;
+    padding: 10px;
+    margin-right: 60px;
+}
+.inbox img{
+width: 410px;
+}
+.mostouterdiv{
+    margin: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+.speicality-item{
+    width: 20px;
+}
+
+.featurealg{
+    display: flex;
+    justify-content: space-between;
+}
+.slider{
+}
+
+@media (max-width: 880px) {
+.slider{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.outerbox{
+    width: 100%;
+    padding: 0;
+    font-size: 10px;
+}
+
+.inbox img{
+    width: 300px;
+    }
+
+    .inbox{
+        width: 100%;
+        margin: 0px;
+    }
+}

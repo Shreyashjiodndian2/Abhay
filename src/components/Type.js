@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 
 const Type =() => {
     return (
+      <>
         <div className='proptype'>
-            <h1>Post New Listing</h1>
-            <h2>Choose the type of property
-                you want to list.</h2>
+            
 
-            <div className='subtype'>
-                <div className='servicediv'>
+                <div className='service'>
+            <h1 className='h1class h1bg'>Post New Listing</h1>
+           
+            <div className='subservice'>
+                <div className='servicediv servicedivision' data-aos="slide-right">
                     <div className='borderbreakimg'>
                 <img src='./images/example-img.png'/>
                 </div>
@@ -18,17 +20,12 @@ const Type =() => {
 
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
-                </p> 
-                <div className='btnalign'>
-                <button className='typebutton'>
-                <Link to="/HostelForm" className='textdec'>
-                    Hostel/PG
-                    </Link>
-                    </button>   
-                    </div>
+                </p>    
+                <button className='servicebtn'><Link to="/HostelForm" className='textdec'>Hostel</Link></button>
+               
                 </div>
 
-                <div className='servicediv'>
+                <div className='servicediv servicedivision' data-aos="slide-down">
                     
                 <div className='borderbreakimg'>
                 <img src='./images/example-img.png'/>
@@ -37,23 +34,30 @@ const Type =() => {
 
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
-                </p>  
-                <div className='btnalign'>
-                <button className='typebutton '>
-                <Link to="/RentForm" className='textdec'>
-                Rent Property
-                    </Link>
-                   
-                    </button>  
-                    </div>
+                </p>    
+                <button className='servicebtn'><Link to="/PGForm" className='textdec'>PG</Link></button>
+               
                 </div>
 
+                <div className='servicediv servicedivision' data-aos="slide-left">
+                    
+                <div className='borderbreakimg'>
+                <img src='./images/example-img.png'/>
+                </div>
+                <h2>Funding Efforts</h2>
 
-            </div>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                </p>    
+                <button className='servicebtn'><Link to="/RentForm" className='textdec'>Rent</Link></button>
+               
+               </div>
+               </div></div>
+           
 
         </div>
         
-
+        </>
     );
 
 }
