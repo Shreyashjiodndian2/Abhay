@@ -4,12 +4,15 @@ import {
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged,
-    sendEmailVerification
+    sendEmailVerification,
+    sendPasswordResetEmail
 } from 'firebase/auth';
 
 import { auth } from '../firebase.config'
 
 const UserContext = createContext();
+
+
 
 const UserState = (props) => {
     const [user, setuser] = useState(null)
@@ -63,6 +66,10 @@ const UserState = (props) => {
     return (
         <UserContext.Provider value={{ user, signup, login, logout }}> {props.children} </UserContext.Provider>
     )
+}
+
+function forgotPassword(email) {
+    return sendPasswordResetEmail(auth, email);
 }
 
 export { UserState, UserContext }
