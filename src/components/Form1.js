@@ -9,6 +9,29 @@ import '../css/Form1.css'
 import RoomdetailsForm from './RoomdetailsForm';
 import {formaction} from '../actions/action'
 import { formreducer } from '../reducers/form1';
+import { GiCctvCamera } from "react-icons/gi"
+import { SiAdguard } from "react-icons/si";
+import { FaFingerprint } from "react-icons/fa"
+import { RiFridgeLine } from "react-icons/ri";
+import { GiWashingMachine } from "react-icons/gi";
+import { MdMicrowave } from "react-icons/md";
+import { FiMonitor } from "react-icons/fi";
+import { MdCoffeeMaker } from "react-icons/md";
+import { GiGasStove } from "react-icons/gi";
+import { GiVendingMachine } from "react-icons/gi";
+import { RiShirtFill } from "react-icons/ri";
+import { GiBroom } from "react-icons/gi";
+import { AiOutlineWifi } from "react-icons/ai";
+import { CgGym } from "react-icons/cg";
+import { GiWaterDrop } from "react-icons/gi";
+import { MdLocalParking } from "react-icons/md";
+import { GiElevator } from "react-icons/gi";
+import { GiCarBattery } from "react-icons/gi";
+import { FaSwimmer  } from "react-icons/fa";
+import { IoLibrarySharp } from "react-icons/io5";
+import { FaHandHoldingWater } from "react-icons/fa";
+import { FaTableTennis } from "react-icons/fa";
+import { ImNewspaper } from "react-icons/im";
 
 export default function Form1()
 {
@@ -16,26 +39,7 @@ export default function Form1()
   const history = useHistory();
 
   const cont = useContext(UserContext)
-  console.log("cont.user in hostelform = ",cont.user)
-  
-  useEffect(() => {
-    
-    
-
-    
-  
-    
-  }, [])
-
-  setTimeout(() => {
-    {/** 
-    if(cont.user == null)
-    {
-      history.push('/login')
-    }
-    */}
-  }, 4000);
-  
+  console.log("cont.user in hostelform = ",cont.user)  
 
   // use dispatch
   const dispatch = useDispatch(); 
@@ -76,7 +80,7 @@ export default function Form1()
   }
 
   // Security amenities
-  const [security, setsecurity] = useState({'cctv' : false , 'gated' : false, 'security' : false, "biometric" : false})
+  const [security, setsecurity] = useState({'cctv' : false ,  'security' : false, "biometric" : false})
   
   const securityinput = (e)=>{
 
@@ -89,7 +93,7 @@ export default function Form1()
 
 
   // Furnishing in property
-  const [furnishing, setfurnishing] = useState({"fridge" : false, 'washingmachine' : false , 'microwave' : false, 'waterpurifier' : false , 'tabletennis' : false , 'coffeemachine' : false , 'tv' : false ,"snackmachine" : false})
+  const [furnishing, setfurnishing] = useState({"fridge" : false, 'washingmachine' : false , 'microwave' : false, 'waterpurifier' : false , 'gasstove' : false , 'coffeemachine' : false , 'tv' : false ,"snackmachine" : false})
   
   const furnishinginput = (e)=>{
 
@@ -101,7 +105,7 @@ export default function Form1()
   }
 
   // Services 
-  const [services, setservices] = useState({'laundry' :  false , "housekeeping" : false, "wificonnectivity":false})
+  const [services, setservices] = useState({"laundry" :  false , "housekeeping" : false, "wificonnectivity":false})
   
   const servicesinput = (e)=>{
 
@@ -113,7 +117,7 @@ export default function Form1()
   }
 
   // Top Amenities 
-  const [topamenities, settopamenities] = useState({"gym" : false, 'watersupply': false, 'reservedparking' : false, 'lift': false, 'powerbackup' : false, 'swimmingpool' : false})
+  const [topamenities, settopamenities] = useState({"library" : false, "gym" : false, "watersupply": false, "reservedparking" : false, "lift": false, "powerbackup" : false, "swimmingpool" : false, "tabletennis" : false, "dailynewspaper" : false})
   
   const topamenitiesinput = (e)=>{
 
@@ -199,7 +203,14 @@ export default function Form1()
     dispatch(formaction(result))
 
 
-    history.push('/Addimages')
+    if(cont.user == null)
+    {
+      history.push('/login')
+    }
+    else
+    {
+      history.push('/Addimages')
+    }
 
 
  
@@ -212,12 +223,21 @@ export default function Form1()
 
             <div className='backgroundimg'>
               <form>
+              <div className='note'>
+              <div className='innerdivision'>
+
+                <h5>Hey Hostel Owners,</h5>
+                <p>Upload your Hostel as a new listing.</p>
+                <h5 className='red'>*indicates a mandatory field</h5>
+              </div>
+              </div>
+
               <div className='maindiv'>
                 
             <div className='innerdivision'>
 
+              
               <div>
-                <h5 className='red'>*indicates a mandatory field</h5>
                 <h4>Hostel Details</h4>
               <div className='HostelInfo'>
               <div className='space-around'>
@@ -267,10 +287,9 @@ export default function Form1()
                 <div className='dropdown'  style={{paddingLeft:"-3000px",width: "800px"}}>
   <select>
     <option value="0">Best Suited For</option>
-    <option value="1">Audi</option>
-    <option value="2">BMW</option>
-    <option value="3">Citroen</option>
-    <option value="4">Ford</option>
+    <option value="1">Student</option>
+    <option value="2">Working Professional</option>
+    <option value="3">Any</option>
   </select>
 </div>
                  
@@ -358,10 +377,9 @@ export default function Form1()
                     <div  style={{width: "800px"}}>
   <select>
     <option value="0">Property Manged By</option>
-    <option value="1">Audi</option>
-    <option value="2">BMW</option>
-    <option value="3">Citroen</option>
-    <option value="4">Ford</option>
+    <option value="1">Owner itself</option>
+    <option value="2">Warden</option>
+    <option value="3">others</option>
   </select>
 </div>
                     
@@ -581,22 +599,18 @@ export default function Form1()
                   <div className='inputgrp'>
                   <div class="checkbox-example">
                         <input type="checkbox" onChange={securityinput} value="cctv" id="checkboxOneInput9"/>
-                        <label className='label' for="checkboxOneInput9"><img src={'images/bx_bx-cctv.png'} alt="group"/></label>
+                        <label className='label' for="checkboxOneInput9"><GiCctvCamera  size='50rem'/></label>
                         <p>CCTV</p>
                       </div>
+                      
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={securityinput}  value="gated" id="checkboxOneInput10"/>
-                        <label className='label' for="checkboxOneInput10"><img src={'images/Gate 1.png'}/></label>
-                        <p>Gated</p>
-                      </div>
-                      <div class="checkbox-example">
-                        <input type="checkbox" onChange={securityinput}  value="security" id="checkboxOneInput11"/>
-                        <label className='label' for="checkboxOneInput11"><img src={'images/Group.png'}/></label>
+                        <input type="checkbox" onChange={securityinput}  value="security" id="checkboxOneInput10"/>
+                        <label className='label' for="checkboxOneInput10"><SiAdguard size='50rem'/></label>
                         <p>Security</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={securityinput}  value="biometric" id="checkboxOneInput12"/>
-                        <label className='label' for="checkboxOneInput12"><img src={'images/healthicons_fingerprint.png'}/></label>
+                        <input type="checkbox" onChange={securityinput}  value="biometric" id="checkboxOneInput11"/>
+                        <label className='label' for="checkboxOneInput11"><FaFingerprint size='50rem'/></label>
                         <p>Biometric</p>
                       </div>
                      
@@ -611,48 +625,48 @@ export default function Form1()
 
                 <div className='inputgrp'>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="fridge" id="checkboxOneInput13"/>
-                        <label className='label' for="checkboxOneInput13"><img src={'images/cil_fridge.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="fridge" id="checkboxOneInput12"/>
+                        <label className='label' for="checkboxOneInput12"><RiFridgeLine size='50rem'/></label>
                         <p>Fridge</p>
                       </div>
                       
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="washingmachine" id="checkboxOneInput14"/>
-                        <label className='label' for="checkboxOneInput14"><img src={'images/mdi_washing-machine.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="washingmachine" id="checkboxOneInput13"/>
+                        <label className='label' for="checkboxOneInput13"><GiWashingMachine size='50rem'/></label>
                         <p>Washing machine</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="microwave" id="checkboxOneInput15"/>
-                        <label className='label' for="checkboxOneInput15"><img src={'images/whh_microwave.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="microwave" id="checkboxOneInput14"/>
+                        <label className='label' for="checkboxOneInput14">< MdMicrowave size='50rem'/></label>
                         <p>Microwave</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="waterpurifier" id="checkboxOneInput16"/>
-                        <label className='label' for="checkboxOneInput16"><img src={'images/filtration 1.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="waterpurifier" id="checkboxOneInput15"/>
+                        <label className='label' for="checkboxOneInput15"><FaHandHoldingWater size='50rem'/></label>
                         <p>Water Purifier</p>
                       </div>
                      
                     </div> 
                      <div className='inputgrp'>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="tabletennis" id="checkboxOneInput17"/>
-                        <label className='label' for="checkboxOneInput17"><img src={'images/vector (4).png'}/></label>
-                        <p>Table Tennis</p>
+                        <input type="checkbox" onChange={furnishinginput} value="gasstove" id="checkboxOneInput16"/>
+                        <label className='label' for="checkboxOneInput16"><GiGasStove size='50rem'/></label>
+                        <p>Gas Stove</p>
                       </div>
                       
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="coffeemachine" id="checkboxOneInput18"/>
-                        <label className='label' for="checkboxOneInput18"><img src={'images/Group 249.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="coffeemachine" id="checkboxOneInput17"/>
+                        <label className='label' for="checkboxOneInput17"><MdCoffeeMaker size='50rem'/></label>
                         <p>Coffee machine</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox"  onChange={furnishinginput} value="tv" id="checkboxOneInput19"/>
-                        <label className='label' for="checkboxOneInput19"><img src={'images/Vector (5).png'}/></label>
+                        <input type="checkbox"  onChange={furnishinginput} value="tv" id="checkboxOneInput18"/>
+                        <label className='label' for="checkboxOneInput18"><FiMonitor size='50rem'/></label>
                         <p>TV</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="snackmachine" id="checkboxOneInput20"/>
-                        <label className='label' for="checkboxOneInput20"><img src={'images/vending-machine 1.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="snackmachine" id="checkboxOneInput19"/>
+                        <label className='label' for="checkboxOneInput19"><GiVendingMachine size='50rem'/></label>
                         <p>Snack machine</p>
                       </div>
                      
@@ -667,19 +681,19 @@ export default function Form1()
 
                 <div className='inputgrp'>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={servicesinput} value="laundry" id="checkboxOneInput21"/>
-                        <label className='label' for="checkboxOneInput21"><img src={'images/laundryy.png'}/></label>
+                        <input type="checkbox" onChange={servicesinput} value="laundry" id="checkboxOneInput20"/>
+                        <label className='label' for="checkboxOneInput20"><RiShirtFill size='50rem'/></label>
                         <p>Laundry</p>
                       </div>
                       
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={servicesinput} value="housekeeping" id="checkboxOneInput22"/>
-                        <label className='label' for="checkboxOneInput22"><img src={'images/Vector (11).png'}/></label>
+                        <input type="checkbox" onChange={servicesinput} value="housekeeping" id="checkboxOneInput21"/>
+                        <label className='label' for="checkboxOneInput21"><GiBroom size='50rem'/></label>
                         <p>House keeping</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={servicesinput} value="wificonnectivity" id="checkboxOneInput23"/>
-                        <label className='label' for="checkboxOneInput23"><img src={'images/clarity_wifi-solid.png'}/></label>
+                        <input type="checkbox" onChange={servicesinput} value="wificonnectivity" id="checkboxOneInput22"/>
+                        <label className='label' for="checkboxOneInput22"><AiOutlineWifi size='50rem'/></label>
                         <p>wifi connectivity</p>
                       </div>
                      
@@ -690,20 +704,25 @@ export default function Form1()
                 <p className='iconheading'>Top Amenities</p>
                 <div className='HostelInfo'>
 
-                <div className='inputgrp'>
+                    <div className='inputgrp'>
+                      <div class="checkbox-example">
+                        <input type="checkbox" onChange={topamenitiesinput} value="library" id="checkboxOneInput23"/>
+                        <label className='label' for="checkboxOneInput23"><IoLibrarySharp size='50rem'/></label>
+                        <p>Library</p>
+                      </div>
                       <div class="checkbox-example">
                         <input type="checkbox" onChange={topamenitiesinput} value="gym" id="checkboxOneInput24"/>
-                        <label className='label' for="checkboxOneInput24"><img src={'images/Group (1).png'}/></label>
+                        <label className='label' for="checkboxOneInput24"><CgGym size='50rem'/></label>
                         <p>Gym</p>
                       </div>
                       <div class="checkbox-example">
                         <input type="checkbox" onChange={topamenitiesinput} value="watersupply" id="checkboxOneInput25"/>
-                        <label className='label' for="checkboxOneInput25"><img src={'images/healthicons_running-water-outline.png'}/></label>
+                        <label className='label' for="checkboxOneInput25"><GiWaterDrop size='50rem'/></label>
                         <p>Water Supply</p>
                       </div>
                       <div class="checkbox-example">
                         <input type="checkbox" onChange={topamenitiesinput} value="reservedparking" id="checkboxOneInput26"/>
-                        <label className='label' for="checkboxOneInput26"><img src={'images/vector (7).png'}/></label>
+                        <label className='label' for="checkboxOneInput26"><MdLocalParking size='50rem'/></label>
                         <p>Reserved Parking</p>
                       </div>
                      
@@ -711,19 +730,32 @@ export default function Form1()
                     <div className='inputgrp'>
                       <div class="checkbox-example">
                         <input type="checkbox"  onChange={topamenitiesinput} value="lift" id="checkboxOneInput27"/>
-                        <label className='label' for="checkboxOneInput27"><img src={'images/ic_baseline-elevator.png'}/></label>
+                        <label className='label' for="checkboxOneInput27"><GiElevator size='50rem'/></label>
                         <p>Lift</p>
                       </div>
                       <div class="checkbox-example">
                         <input type="checkbox" onChange={topamenitiesinput} value="powerbackup" id="checkboxOneInput28"/>
-                        <label className='label' for="checkboxOneInput28"><img src={'images/electric-generator 1.png'}/></label>
+                        <label className='label' for="checkboxOneInput28"><GiCarBattery size='50rem'/></label>
                         <p>Power backup</p>
                       </div>
                       <div class="checkbox-example">
                         <input type="checkbox" onChange={topamenitiesinput} value="swimmingpool" id="checkboxOneInput29"/>
-                        <label className='label' for="checkboxOneInput29"><img src={'images/Vector (9).png'}/></label>
+                        <label className='label' for="checkboxOneInput29"><FaSwimmer size='50rem'/></label>
                         <p>Swimming pool</p>
                       </div>
+                      <div class="checkbox-example">
+                        <input type="checkbox" onChange={topamenitiesinput} value="tabletennis" id="checkboxOneInput30"/>
+                        <label className='label' for="checkboxOneInput30"><FaTableTennis size='50rem'/></label>
+                        <p>Table Tennis</p>
+                      </div>
+                      <div class="checkbox-example">
+                        <input type="checkbox" onChange={topamenitiesinput} value="dailynewspaper" id="checkboxOneInput31"/>
+                        <label className='label' for="checkboxOneInput31"><ImNewspaper size='50rem'/></label>
+                        <p>Daily Newspaper</p>
+                      </div>
+                      
+                      
+
                      
                     </div> 
                 </div>

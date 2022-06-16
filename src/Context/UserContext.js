@@ -1,51 +1,68 @@
-import {createContext, useState,useEffect} from 'react';
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged} from 'firebase/auth';
+import { createContext, useState, useEffect } from 'react';
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged,
+    sendEmailVerification
+} from 'firebase/auth';
 
-import {auth} from '../firebase.config'
+import { auth } from '../firebase.config'
 
 const UserContext = createContext();
 
-const UserState = (props)=>{
+const UserState = (props) => {
     const [user, setuser] = useState(null)
-    const [loggedin,  setloggedin] = useState(false)
+    const [loggedin, setloggedin] = useState(false)
 
-    const signup = (email,password)=>{
-       return  createUserWithEmailAndPassword(auth,email,password)
+    const signup = (email, password) => {
+        const newUserCredentials = createUserWithEmailAndPassword(auth, email, password);
+        newUserCredentials.then((cred) => {
+            sendEmailVerification(cred.user).then(() => {
+                console.log('email sent')
+            }
+            ).catch((err) => {
+                console.log(err)
+            }
+            )
+            console.log('User created successfully');
+        }).catch(error => {
+            console.log('Error creating user:', error);
+        });
+        return newUserCredentials;
     }
 
-    const login = (email, password)=>{
+    const login = (email, password) => {
         setloggedin(true)
-        return signInWithEmailAndPassword(auth , email, password)
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
-    const logout = async ()=>{
+    const logout = async () => {
         setloggedin(false)
         await setuser(null)
         return (
             signOut(auth)
         )
     }
-    
-    
-    
+
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentstate)=>{
+        const unsubscribe = onAuthStateChanged(auth, (currentstate) => {
 
             setuser(currentstate)
         })
-    
-      return () => {
-        unsubscribe();
-      }
+
+        return () => {
+            unsubscribe();
+        }
     })
-    
-      
-    
+
+
+
 
 
     return (
-        <UserContext.Provider value={{user , signup, login, logout}}> {props.children} </UserContext.Provider>
+        <UserContext.Provider value={{ user, signup, login, logout }}> {props.children} </UserContext.Provider>
     )
 }
 
-export {UserState, UserContext}
+export { UserState, UserContext }

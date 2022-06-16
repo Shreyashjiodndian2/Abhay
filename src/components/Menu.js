@@ -10,7 +10,7 @@ const Menu =() => {
 
     const cont = useContext(UserContext);
     const auth = useContext(AuthContext);
-    console.log("menu", cont.user)
+    // console.log("menu", cont.user)
 
     
     const logginout = async ()=>{

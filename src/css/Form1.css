@@ -16,8 +16,8 @@
 .usericon{
   width: 50px;
   height: 50px;
-  margin-left: 5px;
-  margin-top: 10px;
+  margin-left: 150px;
+  margin-top: 5px;
   border-radius: 50%;
 }
 .hiddentext{
@@ -36,6 +36,14 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+  }
+  .note{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+    width:80%;
+    margin-left: ;
+    
+    background: var(--white);;
+    margin:auto;
   }
   .maindiv{
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
@@ -152,16 +160,20 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     display: none;
   }
   #option-1:checked:checked ~ .option-1,
-  #option-2:checked:checked ~ .option-2{
+  #option-2:checked:checked ~ .option-2,
+  #option-3:checked:checked ~ .option-3{
     
     background: #1685F8;
   }
   #option-1:checked:checked ~ .option-1 .dot,
-  #option-2:checked:checked ~ .option-2 .dot{
+  #option-2:checked:checked ~ .option-2 .dot,
+  #option-3:checked:checked ~ .option-3 .dot{
     background: #fff;
   }
   #option-1:checked:checked ~ .option-1 .dot::before,
-  #option-2:checked:checked ~ .option-2 .dot::before{
+  #option-2:checked:checked ~ .option-2 .dot::before,
+  #option-3:checked:checked ~ .option-3 .dot::before
+  {
     opacity: 1;
     transform: scale(1);
   }
@@ -170,7 +182,8 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     color: black;
   }
   #option-1:checked:checked ~ .option-1 span,
-  #option-2:checked:checked ~ .option-2 span{
+  #option-2:checked:checked ~ .option-2 span,
+  #option-3:checked:checked ~ .option-3 span{
     color:#fff;
     background:  #1685F8;
     
@@ -178,38 +191,14 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   
   
   
-  #option-3:checked:checked ~ .option-3,
-  #option-4:checked:checked ~ .option-4{
-    border-color: #1685F8;
-    color:#fff;
-    background:  #1685F8;
-    
-  }
-  #ption-4:checked:checked ~ .option-4 .dot{
-    color:#fff;
-    background:  #1685F8;
-  }
-  #option-3:checked:checked ~ .option-3 .dot::before,
-  #option-4:checked:checked ~ .option-4 .dot::before{
-    opacity: 1;
-    transform: scale(1);
-  }
   
-  
-  #option-3:checked:checked ~ .option-3,
-  #option-4:checked:checked ~ .option-4{
-    border-color: #1685F8;
-    color:#fff;
-    background:  #1685F8;
-    
-  }
-  #option-3:checked:checked ~ .option-3 .dot,
-  #option-4:checked:checked ~ .option-4 .dot{
+  #option-4:checked:checked ~ .option-4 .dot,
+  #option-5:checked:checked ~ .option-5 .dot{
     color:#fff;
     background:  #1685F8;
   }
-  #option-3:checked:checked ~ .option-3 .dot::before,
-  #option-4:checked:checked ~ .option-4 .dot::before{
+  #option-4:checked:checked ~ .option-4 .dot::before,
+  #option-5:checked:checked ~ .option-5 .dot::before{
     opacity: 1;
     transform: scale(1);
   }
@@ -217,27 +206,27 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     font-size: 20px;
     color: black;
   }
-  #option-3:checked:checked ~ .option-3 span,
-  #option-4:checked:checked ~ .option-4 span{
+  #option-4:checked:checked ~ .option-4 span,
+  #option-5:checked:checked ~ .option-5 span{
     color:#fff;
     background:  #1685F8;
-  }option-3:checked:checked ~ .option-3 .dot,
+  }option-4:checked:checked ~ .option-4 .dot,
   #o
   
   
   
   
-  #option-5:checked:checked ~ .option-5,
-  #option-6:checked:checked ~ .option-6{
+  #option-6:checked:checked ~ .option-6,
+  #option-7:checked:checked ~ .option-7{
     border-color: #1685F8;
     background: #1685F8;
   }
-  #option-5:checked:checked ~ .option-5 .dot,
-  #option-6:checked:checked ~ .option-6 .dot{
+  #option-6:checked:checked ~ .option-6 .dot,
+  #option-7:checked:checked ~ .option-7 .dot{
     background: #fff;
   }
-  #option-5:checked:checked ~ .option-5 .dot::before,
-  #option-6:checked:checked ~ .option-6 .dot::before{
+  #option-6:checked:checked ~ .option-6 .dot::before,
+  #option-7:checked:checked ~ .option-7 .dot::before{
     opacity: 1;
     transform: scale(1);
   }
@@ -245,8 +234,8 @@ h1,h2,h3,h4,h5,h6,input,p,select{
     font-size: 20px;
     color: black;
   }
-  #option-5:checked:checked ~ .option-5 span,
-  #option-6:checked:checked ~ .option-6 span{
+  #option-6:checked:checked ~ .option-6 span,
+  #option-7:checked:checked ~ .option-7 span{
     color:#fff;
     background:  #1685F8;
   }
@@ -275,6 +264,31 @@ h1,h2,h3,h4,h5,h6,input,p,select{
   #option-9:checked:checked ~ .option-9 span{
     color:#fff;
     background:  #1688F8;
+  }
+  #option-10:checked:checked ~ .option-10,
+  #option-11:checked:checked ~ .option-11{
+    border-color: #1685F8;
+    color:#fff;
+    background:  #1685F8;
+    
+  }
+  #option-10:checked:checked ~ .option-10 .dot{
+    color:#fff;
+    background:  #1685F8;
+  }
+  #option-10:checked:checked ~ .option-10 .dot::before,
+  #option-11:checked:checked ~ .option-11 .dot::before{
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  
+  #option-10:checked:checked ~ .option-10,
+  #option-11:checked:checked ~ .option-11{
+    border-color: #1685F8;
+    color:#fff;
+    background:  #1685F8;
+    
   }
 
   

@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, {  useEffect, useState } from "react";
 import {useSelector , useDispatch, useStore} from "react-redux";
 import { useContext } from "react";
 import { UserContext } from "../Context/UserContext";
@@ -7,12 +7,14 @@ import { update, completedsignal } from "../Service/Operation";
 import { storage } from "../firebase.config";
 import {ref, uploadBytes} from  'firebase/storage'
 import { uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 
 
 const AddImages = () => {
 
+    const history = useHistory();
     const dispatch = useDispatch();  
     const myform = useSelector((state) => state.formreducer)    
     const cont = useContext(UserContext)
@@ -26,6 +28,19 @@ const AddImages = () => {
     const [signal, setsignal] = useState(false)
     const [completesign, setcompletesign] = useState(false)
     
+    useEffect(() => {
+        
+        console.log("running useeffect")
+        if(completesign == true)
+        {
+            console.log('inside if statement of useeffect')
+            setTimeout(() => {
+                history.push('/AddProperty');
+            }, 2000);
+        }
+    
+     
+    }, [completesign])
 
     const onSelectFile = (event) =>{
 
@@ -114,6 +129,7 @@ const AddImages = () => {
         
         const completedsignal = await update(obj);
         setcompletesign(completedsignal)
+        
     }
 
     const onsubmit = async ()=>{

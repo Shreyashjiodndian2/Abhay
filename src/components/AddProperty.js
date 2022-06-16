@@ -10,19 +10,27 @@ import '../css/main2.css'
 import FeaturedProject from './FeaturedProject';
 
 import RentProperty from './RentProperty';
-
+import { useContext, useState, } from "react";
+import {UserContext} from '../Context/UserContext'
 import '../css/main.css'
 
 
+
 const AddProperty =() => {
+
+  
+
 	return (
+
+    
 
         <div className="App">
         <Menu/>
         <PostProperty/>
         <Dashboard/>
           <Type/>
-          <FeaturedProject/>
+           <FeaturedProject />  
+        
         
         
         </div>

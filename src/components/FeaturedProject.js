@@ -78,87 +78,75 @@ export default function FeaturedProject(props) {
       variableWidth:true,
       arrows:true
       };
+
+
       return (
-        <Slider className='slider' {...settings}>
+     
+     
+     
+       <>
+     
+     
+     
+     <Slider className='slider' {...settings}>
+       {
+     
+         hosteldetailsofuser.length !== 0 ? 
+         
+         
+         hosteldetailsofuser.map((obj,index)=>{
+         
+         const locality = obj.addressdetails.locality;
+         const hostelname = obj.hosteldetails.inputs.hostelname;
+         const ownername = obj.finalownerdetails.ownername;
+         const image1 = obj.images[0];
+         const image2 = obj.images[1];
+         
+             return (
+         
+                 <>
           
           <div className='outerbox'>
             <div  className='inbox'> 
-            <img src='https://th.bing.com/th/id/OIP.pqTvnFY9RrkU5pDm3dM9uwHaEl?pid=ImgDet&rs=1'/>
+            <img src={image1}/>
             <div className='featurealg'>
             <p>Dream Land</p>
-            <button className='servicebtn'>view</button>
+            <button onClick={()=> history.push(`/showproperty/${obj.objid}`)} className='servicebtn'>view</button>
             </div>
-            <h3> By Patel Group</h3>
-            <h3>thane,Mumbai</h3>
-            <h3>mrketed by willow stone reality pvt ltd</h3>
+            <h3> By {ownername}</h3>
+                  <h3>{locality}</h3>
+                  <h3>{hostelname}</h3>
             
             </div>
-             </div>
-          <div className='outerbox'>
-            <div  className='inbox'> 
-            <img src='https://th.bing.com/th/id/OIP.pqTvnFY9RrkU5pDm3dM9uwHaEl?pid=ImgDet&rs=1'/>
-            <div className='featurealg'>
-            <p>Dream Land</p>
-            <button className='servicebtn'>view</button>
-            </div>
-            <h3> By Patel Group</h3>
-            <h3>thane,Mumbai</h3>
-            <h3>mrketed by willow stone reality pvt ltd</h3>
-            
-            </div>
-             </div>
-          <div className='outerbox'>
-            <div  className='inbox'> 
-            <img src='https://th.bing.com/th/id/OIP.pqTvnFY9RrkU5pDm3dM9uwHaEl?pid=ImgDet&rs=1'/>
-            <div className='featurealg'>
-            <p>Dream Land</p>
-            <button className='servicebtn'>view</button>
-            </div>
-            <h3> By Patel Group</h3>
-            <h3>thane,Mumbai</h3>
-            <h3>mrketed by willow stone reality pvt ltd</h3>
-            
-            </div>
-             </div>
-             <div className='outerbox'>
-            <div  className='inbox'> 
-            <img src='https://th.bing.com/th/id/OIP.pqTvnFY9RrkU5pDm3dM9uwHaEl?pid=ImgDet&rs=1'/>
-            <div className='featurealg'>
-            <p>Dream Land</p>
-            <button className='servicebtn'>view</button>
-            </div>
-            <h3> By Patel Group</h3>
-            <h3>thane,Mumbai</h3>
-            <h3>mrketed by willow stone reality pvt ltd</h3>
-            
-            </div>
-             </div>
-             <div className='outerbox'>
-            <div  className='inbox'> 
-            <img src='https://th.bing.com/th/id/OIP.pqTvnFY9RrkU5pDm3dM9uwHaEl?pid=ImgDet&rs=1'/>
-            <div className='featurealg'>
-            <p>Dream Land</p>
-            <button className='servicebtn'>view</button>
-            </div>
-            <h3> By Patel Group</h3>
-            <h3>thane,Mumbai</h3>
-            <h3>mrketed by willow stone reality pvt ltd</h3>
-            
-            </div>
-             </div>
-             <div className='outerbox'>
-            <div  className='inbox'> 
-            <img src='https://th.bing.com/th/id/OIP.pqTvnFY9RrkU5pDm3dM9uwHaEl?pid=ImgDet&rs=1'/>
-            <div className='featurealg'>
-            <p>Dream Land</p>
-            <button className='servicebtn'>view</button>
-            </div>
-            <h3> By Patel Group</h3>
-            <h3>thane,Mumbai</h3>
-            <h3>mrketed by willow stone reality pvt ltd</h3>
-            
-            </div>
-             </div>
-        </Slider>
+          </div>
+          </>
+    
+        )
+
+        
+        
+      }) : ''
+    
+    }
+    </Slider>
+
+
+        
+
+
+
+
+
+
+
+          </>
+
+
+
+
+
+
+
+
       );
   }

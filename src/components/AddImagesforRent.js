@@ -1,21 +1,28 @@
 import React, {  useState } from "react";
 import {useSelector , useDispatch, useStore} from "react-redux";
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import { UserContext } from "../Context/UserContext";
 import { Navbar,Nav,NavDropdown,Container,Card,Button,InputGroup,FormControl,Form,Table } from 'react-bootstrap';
 import { updateforrent } from "../Service/Operation";
 import { storage } from "../firebase.config";
 import {ref, uploadBytes} from  'firebase/storage'
 import { uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { useHistory } from "react-router-dom";
 
 
 
 
 const AddImagesforRent = () => {
 
+    console.log("adding images for rent form")
+    const history = useHistory()
     const dispatch = useDispatch();  
     const myform = useSelector((state) => state.rentreducer)    
     console.log("myform in rent",myform)
+    if(myform == null)
+    {
+        history.push('/RentForm')
+    }
     const cont = useContext(UserContext) 
 
     var arr = [];
@@ -25,6 +32,21 @@ const AddImagesforRent = () => {
     const [urls, seturls] = useState([]);
     const [signal, setsignal] = useState(false)
     const [completesign, setcompletesign] = useState(false)
+
+    useEffect(() => {
+        
+        console.log("running useeffect")
+        if(completesign == true)
+        {
+            console.log('inside if statement of useeffect')
+            setTimeout(() => {
+                history.push('/AddProperty');
+            }, 2000);
+        }
+    
+     
+    }, [completesign])
+    
     
 
     const onSelectFile = (event) =>{

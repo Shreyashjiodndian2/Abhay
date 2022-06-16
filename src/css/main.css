@@ -43,6 +43,7 @@ p{
 }
 nav{background: #fff;
 	overflow: hidden;
+	align-items: center;
 	} 
 	nav:after{
 		content: '';
@@ -513,12 +514,16 @@ background: #CCE3FE;
 		margin-top: 25%;
 	}
 .servicecontent{
-	padding-top: 70%;
+	padding-top: 170%;
+	padding-left: -60px;
+
 }
+
 .serviceimage{
 	top: -15%;
 	left: 2%;
 }
+
 
 .serviceimage2{
 	top: -15%;

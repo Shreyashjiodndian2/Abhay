@@ -20,12 +20,6 @@ const RentProperty =(props) => {
     const cont = useContext(UserContext)
     console.log("cont.user = ",cont.user)
 
-    if(cont.user == null)
-    {
-        history.push('/login')
-
-    }
-
     // use dispatch
     const dispatch = useDispatch(); 
     const mystate = useSelector((state) => state.rentreducer)
@@ -60,7 +54,7 @@ const RentProperty =(props) => {
     }
 
 
-    const submitted = ()=>{
+    const submitted = async ()=>{
 
         console.log("submitted")
 
@@ -69,7 +63,14 @@ const RentProperty =(props) => {
 
         dispatch(rentaction(obj))
 
-        history.push('/AddImagesforRent')
+        if(cont.user == null)
+        {
+            history.push('/login')
+        }
+        else
+        {
+            history.push('/AddImagesforRent')
+        }
         
     }
 

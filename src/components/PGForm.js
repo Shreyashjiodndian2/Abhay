@@ -7,6 +7,29 @@ import {
  } from "react-router-dom";
  
 import '../css/Form1.css'
+import { GiCctvCamera } from "react-icons/gi"
+import { SiAdguard } from "react-icons/si";
+import { FaFingerprint } from "react-icons/fa"
+import { RiFridgeLine } from "react-icons/ri";
+import { GiWashingMachine } from "react-icons/gi";
+import { MdMicrowave } from "react-icons/md";
+import { FiMonitor } from "react-icons/fi";
+import { MdCoffeeMaker } from "react-icons/md";
+import { GiGasStove } from "react-icons/gi";
+import { GiVendingMachine } from "react-icons/gi";
+import { RiShirtFill } from "react-icons/ri";
+import { GiBroom } from "react-icons/gi";
+import { AiOutlineWifi } from "react-icons/ai";
+import { CgGym } from "react-icons/cg";
+import { GiWaterDrop } from "react-icons/gi";
+import { MdLocalParking } from "react-icons/md";
+import { GiElevator } from "react-icons/gi";
+import { GiCarBattery } from "react-icons/gi";
+import { FaSwimmer  } from "react-icons/fa";
+import { IoLibrarySharp } from "react-icons/io5";
+import { FaHandHoldingWater } from "react-icons/fa";
+import { FaTableTennis } from "react-icons/fa";
+import { ImNewspaper } from "react-icons/im";
  
  const PGForm =()=>{
    
@@ -44,9 +67,9 @@ var j=0;
 
 
   // Hostel details usestates
-  const [hosteldetails, sethosteldetails] = useState({})
+  const [pgdetails, sethosteldetails] = useState({})
   const [commonarea, setcommonarea] = useState({"Living" : false, "Kitchen" : false, "Dining-Hall": false, "Library" : false})
-  const [finalhosteldetails, setfinalhosteldetails] = useState({})
+  const [finalpgdetails, setfinalpgdetails] = useState({})
   
   const commonareainputs = (e)=>{
 
@@ -58,10 +81,10 @@ var j=0;
 
   }
 
-  const hostelinput = (e)=>{
+  const pginput = (e)=>{
 
-    hosteldetails[e.target.name] = e.target.value
-    console.log(hosteldetails)
+    pgdetails[e.target.name] = e.target.value
+    console.log(pgdetails)
 
   }
 
@@ -78,7 +101,7 @@ var j=0;
   }
 
   // Security amenities
-  const [security, setsecurity] = useState({'CCTV' : false , 'Gated' : false, 'Security' : false, "Biometric" : false})
+  const [security, setsecurity] = useState({'cctv' : false ,  'security' : false, "biometric" : false})
   
   const securityinput = (e)=>{
 
@@ -91,7 +114,7 @@ var j=0;
 
 
   // Furnishing in property
-  const [furnishing, setfurnishing] = useState({"Fridge" : false, 'Washing machine' : false , 'Microwave' : false, 'Water Purifier' : false , 'Table Tennis' : false , 'Coffee machine' : false , 'TV' : false ,"Snack machine" : false})
+  const [furnishing, setfurnishing] = useState({"fridge" : false, 'washingmachine' : false , 'microwave' : false, 'waterpurifier' : false , 'gasstove' : false , 'coffeemachine' : false , 'tv' : false ,"snackmachine" : false})
   
   const furnishinginput = (e)=>{
 
@@ -103,7 +126,7 @@ var j=0;
   }
 
   // Services 
-  const [services, setservices] = useState({'Laundry' :  false , "House keeping" : false, "wifi connectivity":false})
+  const [services, setservices] = useState({"Laundry" :  false , "House keeping" : false, "wifi connectivity":false})
   
   const servicesinput = (e)=>{
 
@@ -115,7 +138,7 @@ var j=0;
   }
 
   // Top Amenities 
-  const [topamenities, settopamenities] = useState({"Gym" : false, 'Water Supply': false, 'Reserved Parking' : false, 'Lift': false, 'Power backup' : false, 'Swimming pool' : false})
+  const [topamenities, settopamenities] = useState({"library" : false, "gym" : false, "watersupply": false, "reservedparking" : false, "lift": false, "powerbackup" : false, "swimmingpool" : false, "tabletennis" : false, "dailynewspaper" : false})
   
   const topamenitiesinput = (e)=>{
 
@@ -153,11 +176,10 @@ var j=0;
   
   // submitting the form
   const submitted = ()=>{
-    console.log("submitted");
-    setfinalhosteldetails({...hosteldetails, commonarea : {...commonarea}})
 
-    console.log()
-    console.log(finalhosteldetails)
+    console.log("submitted for pgform");
+    setfinalpgdetails({...pgdetails, commonarea : {...commonarea}})
+    console.log(finalpgdetails)
  
   }
 
@@ -175,9 +197,9 @@ var j=0;
                 <h4>PG Details</h4>
                 <div className='HostelInfo'>
               <div className='space-around'>
-                <input className='inputcss fulllength' id='inputid' name='hostelname' onChange={hostelinput} type='text ' placeholder="PG Name" required/>
+                <input className='inputcss fulllength' id='inputid' name='hostelname' onChange={pginput} type='text ' placeholder="PG Name" required/>
                 <br/>
-                <input className='inputcss fulllength'id='inputid' name='totalbeds' onChange={hostelinput} type='text ' placeholder="Total No. of Beds required"/>
+                <input className='inputcss fulllength'id='inputid' name='totalbeds' onChange={pginput} type='text ' placeholder="Total No. of Beds required"/>
                 <br/><br/>
                 </div>
                 
@@ -185,16 +207,22 @@ var j=0;
                 <div className='radiobuttongroup'>
                   <p id='pid'>PG is for</p>
                     <div class="wrapper">
-                          <input type="radio" onChange={hostelinput} name="pgfor" value='girls' id="option-1" />
-                          <input type="radio" onChange={hostelinput} name="pgfor" value='boys' id="option-2"/>
+                          <input type="radio" onChange={pginput} name="pgfor" value='girls' id="option-1" />
+                          <input type="radio" onChange={pginput} name="pgfor" value='boys' id="option-2"/>
+                          <input type="radio" onChange={pginput} name="pgfor" value='both' id="option-3"/>
                             <label for="option-1" class="option option-1">
                              
                                 <span>Girls</span>
                                 </label>
                             <label for="option-2" class="option option-2">
                               
-                                <span>boys</span>
+                                <span>Boys</span>
                             </label>
+                            <label for="option-3" class="option option-3">
+                              
+                                <span>Both</span>
+                            </label>
+
                     </div>
                 </div>
 
@@ -204,10 +232,9 @@ var j=0;
                 <div  style={{width: "800px"}}>
   <select>
     <option value="0">Best Suited For</option>
-    <option value="1">Audi</option>
-    <option value="2">BMW</option>
-    <option value="3">Citroen</option>
-    <option value="4">Ford</option>
+    <option value="1">Student</option>
+    <option value="2">Working Professionals</option>
+    <option value="3">Any</option>
   </select>
 </div>
 
@@ -218,12 +245,12 @@ var j=0;
                   <div className='radiobuttongroup'>
                     <p id='pid'>Meals available</p>
                       <div class="wrapper">
-                            <input type="radio" name="mealsavailable" value='yes' onChange={hostelinput} id="option-3" />
-                            <input type="radio" name="mealsavailable" value='no' onChange={hostelinput} id="option-4"/>
-                              <label for="option-3" class="option option-3">                            
+                            <input type="radio" name="mealsavailable" value='yes' onChange={pginput} id="option-4" />
+                            <input type="radio" name="mealsavailable" value='no' onChange={pginput} id="option-5"/>
+                              <label for="option-4" class="option option-4">                            
                                   <span>Yes</span>
                                   </label>
-                              <label for="option-4" class="option option-4">
+                              <label for="option-5" class="option option-5">
                                   <span>no</span>
                               </label>
                       </div>
@@ -234,10 +261,10 @@ var j=0;
 
 
 
-                  <input className='inputcss' id='inputid' type='text' name='noticeperiod' onChange={hostelinput} placeholder="Notice period" required/>
-                  <input className='inputcss' id='inputid' type='text' name='lockinperiod' onChange={hostelinput} placeholder="Lockin period" required/>
-                  <input className='inputcss' id='inputid' type='text' name='noticeperiod' onChange={hostelinput} placeholder="Rent" required/>
-                  <input className='inputcss' id='inputid' type='text' name='lockinperiod' onChange={hostelinput} placeholder="Security Deposite" required/>
+                  <input className='inputcss' id='inputid' type='text' name='noticeperiod' onChange={pginput} placeholder="Notice period" required/>
+                  <input className='inputcss' id='inputid' type='text' name='lockinperiod' onChange={pginput} placeholder="Lockin period" required/>
+                  <input className='inputcss' id='inputid' type='text' name='noticeperiod' onChange={pginput} placeholder="Rent" required/>
+                  <input className='inputcss' id='inputid' type='text' name='lockinperiod' onChange={pginput} placeholder="Security Deposite" required/>
                 
                 
               <div className='space-around'>
@@ -278,13 +305,13 @@ var j=0;
                       <p id='pid' className='propertymanager'>Property manager stays at premise?</p>
                       <br/> 
                       <div class="wrapper right">
-                          <input type="radio" onChange={ownerdetailsinput} name="staysatpremise" value='yes' id="option-5" />
-                          <input type="radio" onChange={ownerdetailsinput}  name="staysatpremise" value='no' id="option-6"/>
-                            <label for="option-5" class="option option-5">
+                          <input type="radio" onChange={ownerdetailsinput} name="staysatpremise" value='yes' id="option-6" />
+                          <input type="radio" onChange={ownerdetailsinput}  name="staysatpremise" value='no' id="option-7"/>
+                            <label for="option-6" class="option option-6">
                              
                                 <span>Yes</span>
                                 </label>
-                            <label for="option-6" class="option option-6">
+                            <label for="option-7" class="option option-7">
                               
                                 <span>no</span>
                             </label>
@@ -296,10 +323,9 @@ var j=0;
                     <div  style={{width: "800px"}}>
   <select>
     <option value="0">Property Manged By</option>
-    <option value="1">Audi</option>
-    <option value="2">BMW</option>
-    <option value="3">Citroen</option>
-    <option value="4">Ford</option>
+    <option value="1">Owner itself</option>
+    <option value="2">Warden</option>
+    <option value="3">Others</option>
   </select>
 </div>
                     
@@ -331,26 +357,21 @@ var j=0;
 
                   <div className='inputgrp'>
                   <div class="checkbox-example">
-                        <input type="checkbox" onChange={securityinput} value="CCTV" id="checkboxOneInput9"/>
-                        <label className='label' for="checkboxOneInput9"><img src={'images/bx_bx-cctv.png'} alt="group"/></label>
+                        <input type="checkbox" onChange={securityinput} value="cctv" id="checkboxOneInput9"/>
+                        <label className='label' for="checkboxOneInput9"><GiCctvCamera  size='50rem'/></label>
                         <p>CCTV</p>
                       </div>
+                      
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={securityinput}  value="Gated" id="checkboxOneInput10"/>
-                        <label className='label' for="checkboxOneInput10"><img src={'images/Gate 1.png'}/></label>
-                        <p>Gated</p>
-                      </div>
-                      <div class="checkbox-example">
-                        <input type="checkbox" onChange={securityinput}  value="Security" id="checkboxOneInput11"/>
-                        <label className='label' for="checkboxOneInput11"><img src={'images/Group.png'}/></label>
+                        <input type="checkbox" onChange={securityinput}  value="security" id="checkboxOneInput10"/>
+                        <label className='label' for="checkboxOneInput10"><SiAdguard size='50rem'/></label>
                         <p>Security</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={securityinput}  value="Biometric" id="checkboxOneInput12"/>
-                        <label className='label' for="checkboxOneInput12"><img src={'images/healthicons_fingerprint.png'}/></label>
+                        <input type="checkbox" onChange={securityinput}  value="biometric" id="checkboxOneInput11"/>
+                        <label className='label' for="checkboxOneInput11"><FaFingerprint size='50rem'/></label>
                         <p>Biometric</p>
                       </div>
-                     
                     </div> 
                 </div>
 
@@ -360,49 +381,49 @@ var j=0;
                 <div className='HostelInfo'>
 
                 <div className='inputgrp'>
-                      <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="Fridge" id="checkboxOneInput13"/>
-                        <label className='label' for="checkboxOneInput13"><img src={'images/cil_fridge.png'}/></label>
+                <div class="checkbox-example">
+                        <input type="checkbox" onChange={furnishinginput} value="fridge" id="checkboxOneInput12"/>
+                        <label className='label' for="checkboxOneInput12"><RiFridgeLine size='50rem'/></label>
                         <p>Fridge</p>
                       </div>
                       
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="Washing machine" id="checkboxOneInput14"/>
-                        <label className='label' for="checkboxOneInput14"><img src={'images/mdi_washing-machine.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="washingmachine" id="checkboxOneInput13"/>
+                        <label className='label' for="checkboxOneInput13"><GiWashingMachine size='50rem'/></label>
                         <p>Washing machine</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="Microwave" id="checkboxOneInput15"/>
-                        <label className='label' for="checkboxOneInput15"><img src={'images/whh_microwave.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="microwave" id="checkboxOneInput14"/>
+                        <label className='label' for="checkboxOneInput14">< MdMicrowave size='50rem'/></label>
                         <p>Microwave</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="Water Purifier" id="checkboxOneInput16"/>
-                        <label className='label' for="checkboxOneInput16"><img src={'images/filtration 1.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="waterpurifier" id="checkboxOneInput15"/>
+                        <label className='label' for="checkboxOneInput15"><FaHandHoldingWater size='50rem'/></label>
                         <p>Water Purifier</p>
                       </div>
                      
                     </div> 
                      <div className='inputgrp'>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="Table Tennis" id="checkboxOneInput17"/>
-                        <label className='label' for="checkboxOneInput17"><img src={'images/vector (4).png'}/></label>
-                        <p>Table Tennis</p>
+                        <input type="checkbox" onChange={furnishinginput} value="gasstove" id="checkboxOneInput16"/>
+                        <label className='label' for="checkboxOneInput16"><GiGasStove size='50rem'/></label>
+                        <p>Gas Stove</p>
                       </div>
                       
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="Coffee machine" id="checkboxOneInput18"/>
-                        <label className='label' for="checkboxOneInput18"><img src={'images/Group 249.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="coffeemachine" id="checkboxOneInput17"/>
+                        <label className='label' for="checkboxOneInput17"><MdCoffeeMaker size='50rem'/></label>
                         <p>Coffee machine</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox"  onChange={furnishinginput} value="TV" id="checkboxOneInput19"/>
-                        <label className='label' for="checkboxOneInput19"><img src={'images/Vector (5).png'}/></label>
+                        <input type="checkbox"  onChange={furnishinginput} value="tv" id="checkboxOneInput18"/>
+                        <label className='label' for="checkboxOneInput18"><FiMonitor size='50rem'/></label>
                         <p>TV</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={furnishinginput} value="Snack machine" id="checkboxOneInput20"/>
-                        <label className='label' for="checkboxOneInput20"><img src={'images/vending-machine 1.png'}/></label>
+                        <input type="checkbox" onChange={furnishinginput} value="snackmachine" id="checkboxOneInput19"/>
+                        <label className='label' for="checkboxOneInput19"><GiVendingMachine size='50rem'/></label>
                         <p>Snack machine</p>
                       </div>
                      
@@ -416,20 +437,20 @@ var j=0;
                 <div className='HostelInfo'>
 
                 <div className='inputgrp'>
-                      <div class="checkbox-example">
-                        <input type="checkbox" onChange={servicesinput} value="Laundry" id="checkboxOneInput21"/>
-                        <label className='label' for="checkboxOneInput21"><img src={'images/laundryy.png'}/></label>
+                <div class="checkbox-example">
+                        <input type="checkbox" onChange={servicesinput} value="laundry" id="checkboxOneInput20"/>
+                        <label className='label' for="checkboxOneInput20"><RiShirtFill size='50rem'/></label>
                         <p>Laundry</p>
                       </div>
                       
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={servicesinput} value="House keeping" id="checkboxOneInput22"/>
-                        <label className='label' for="checkboxOneInput22"><img src={'images/Vector (11).png'}/></label>
+                        <input type="checkbox" onChange={servicesinput} value="housekeeping" id="checkboxOneInput21"/>
+                        <label className='label' for="checkboxOneInput21"><GiBroom size='50rem'/></label>
                         <p>House keeping</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={servicesinput} value="wifi connectivity" id="checkboxOneInput23"/>
-                        <label className='label' for="checkboxOneInput23"><img src={'images/clarity_wifi-solid.png'}/></label>
+                        <input type="checkbox" onChange={servicesinput} value="wificonnectivity" id="checkboxOneInput22"/>
+                        <label className='label' for="checkboxOneInput22"><AiOutlineWifi size='50rem'/></label>
                         <p>wifi connectivity</p>
                       </div>
                      
@@ -440,41 +461,58 @@ var j=0;
                 <h4 className='iconheading'>Top Amenities</h4>
                 <div className='HostelInfo'>
 
-                <div className='inputgrp'>
+                  <div className='inputgrp'>
+                    <div class="checkbox-example">
+                        <input type="checkbox" onChange={topamenitiesinput} value="library" id="checkboxOneInput23"/>
+                        <label className='label' for="checkboxOneInput23"><IoLibrarySharp size='50rem'/></label>
+                        <p>Library</p>
+                      </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={topamenitiesinput} value="Gym" id="checkboxOneInput24"/>
-                        <label className='label' for="checkboxOneInput24"><img src={'images/Group (1).png'}/></label>
+                        <input type="checkbox" onChange={topamenitiesinput} value="gym" id="checkboxOneInput24"/>
+                        <label className='label' for="checkboxOneInput24"><CgGym size='50rem'/></label>
                         <p>Gym</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={topamenitiesinput} value="Water Supply" id="checkboxOneInput25"/>
-                        <label className='label' for="checkboxOneInput25"><img src={'images/healthicons_running-water-outline.png'}/></label>
+                        <input type="checkbox" onChange={topamenitiesinput} value="watersupply" id="checkboxOneInput25"/>
+                        <label className='label' for="checkboxOneInput25"><GiWaterDrop size='50rem'/></label>
                         <p>Water Supply</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={topamenitiesinput} value="Reserved Parking" id="checkboxOneInput26"/>
-                        <label className='label' for="checkboxOneInput26"><img src={'images/vector (7).png'}/></label>
+                        <input type="checkbox" onChange={topamenitiesinput} value="reservedparking" id="checkboxOneInput26"/>
+                        <label className='label' for="checkboxOneInput26"><MdLocalParking size='50rem'/></label>
                         <p>Reserved Parking</p>
                       </div>
                      
-                    </div> 
-                    <div className='inputgrp'>
+                  </div> 
+                  <div className='inputgrp'>
                       <div class="checkbox-example">
-                        <input type="checkbox"  onChange={topamenitiesinput} value="Lift" id="checkboxOneInput27"/>
-                        <label className='label' for="checkboxOneInput27"><img src={'images/ic_baseline-elevator.png'}/></label>
+                        <input type="checkbox"  onChange={topamenitiesinput} value="lift" id="checkboxOneInput27"/>
+                        <label className='label' for="checkboxOneInput27"><GiElevator size='50rem'/></label>
                         <p>Lift</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={topamenitiesinput} value="Power backup" id="checkboxOneInput28"/>
-                        <label className='label' for="checkboxOneInput28"><img src={'images/electric-generator 1.png'}/></label>
+                        <input type="checkbox" onChange={topamenitiesinput} value="powerbackup" id="checkboxOneInput28"/>
+                        <label className='label' for="checkboxOneInput28"><GiCarBattery size='50rem'/></label>
                         <p>Power backup</p>
                       </div>
                       <div class="checkbox-example">
-                        <input type="checkbox" onChange={topamenitiesinput} value="Swimming pool" id="checkboxOneInput29"/>
-                        <label className='label' for="checkboxOneInput29"><img src={'images/Vector (9).png'}/></label>
+                        <input type="checkbox" onChange={topamenitiesinput} value="swimmingpool" id="checkboxOneInput29"/>
+                        <label className='label' for="checkboxOneInput29"><FaSwimmer size='50rem'/></label>
                         <p>Swimming pool</p>
                       </div>
-                     
+                      <div class="checkbox-example">
+                        <input type="checkbox" onChange={topamenitiesinput} value="tabletennis" id="checkboxOneInput30"/>
+                        <label className='label' for="checkboxOneInput30"><FaTableTennis size='50rem'/></label>
+                        <p>Table Tennis</p>
+                      </div>
+                  </div>
+                  <div className='inputgrp'>
+                    
+                      <div class="checkbox-example">
+                        <input type="checkbox" onChange={topamenitiesinput} value="dailynewspaper" id="checkboxOneInput31"/>
+                        <label className='label' for="checkboxOneInput31"><ImNewspaper size='50rem'/></label>
+                        <p>Daily Newspaper</p>
+                      </div>
                     </div> 
                 </div>
 
@@ -497,7 +535,7 @@ var j=0;
             </div>
             <div className='continuebtn'>
             <button type='submit' onClick={submitted} className='continue'>
-				      {/* <Link to="/Addimages">Continue</Link>*/} submit</button> 
+				       <Link to="/Addimages">submit</Link> </button> 
             </div>
            
            

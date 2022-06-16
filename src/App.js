@@ -50,7 +50,7 @@ class App extends Component {
       < AddImages />
       </Route>
       
-      <Route exact path='/ShowProperty' >
+      <Route exact path='/ShowProperty/:id' >
       < ShowProperty />
       </Route>
       <Route exact path='/Login'>
